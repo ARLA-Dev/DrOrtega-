@@ -7,6 +7,7 @@ import Ventanas.ListadoMedicamentos;
 import Ventanas.ListadoPacientes;
 import Ventanas.Medicamentos;
 import Ventanas.Pacientes;
+import Ventanas.Reposos;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Toolkit;
@@ -40,6 +41,7 @@ public class MDI extends javax.swing.JFrame {
         desktopPane.add(historias);
         desktopPane.add(listado_m);
         desktopPane.add(listado_p);
+        desktopPane.add(reposo_m);
         DateTimeFormatter formateador = DateTimeFormatter.ofPattern("h:mm:ss a");
         reloj.setText(formateador.format(LocalDateTime.now()));
         reloj();
@@ -67,6 +69,8 @@ public class MDI extends javax.swing.JFrame {
         m_listados = new javax.swing.JMenu();
         i_lpacientes = new javax.swing.JMenuItem();
         i_lmedicamentos = new javax.swing.JMenuItem();
+        Reposos = new javax.swing.JMenu();
+        reposo = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Dr. Johnny Ortega");
@@ -248,6 +252,25 @@ public class MDI extends javax.swing.JFrame {
 
         menuBar.add(m_listados);
 
+        Reposos.setBackground(new java.awt.Color(255, 255, 255));
+        Reposos.setBorder(BorderFactory.createMatteBorder(0, 0, 0, 1, Color.BLACK));
+        Reposos.setMnemonic('h');
+        Reposos.setText("Reposos");
+        Reposos.setFont(new java.awt.Font("Leelawadee", 1, 18)); // NOI18N
+
+        reposo.setFont(new java.awt.Font("Leelawadee", 1, 14)); // NOI18N
+        reposo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/paciente.png"))); // NOI18N
+        reposo.setMnemonic('c');
+        reposo.setText("Generar Reposo");
+        reposo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                reposoActionPerformed(evt);
+            }
+        });
+        Reposos.add(reposo);
+
+        menuBar.add(Reposos);
+
         setJMenuBar(menuBar);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -289,6 +312,10 @@ public class MDI extends javax.swing.JFrame {
     private void i_lmedicamentosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_i_lmedicamentosActionPerformed
         listado_m.setVisible(true);
     }//GEN-LAST:event_i_lmedicamentosActionPerformed
+
+    private void reposoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reposoActionPerformed
+       reposo_m.setVisible(true);
+    }//GEN-LAST:event_reposoActionPerformed
 
     //MIS METODOS
     public void close() {
@@ -338,8 +365,10 @@ public class MDI extends javax.swing.JFrame {
     private Historias historias = new Historias();
     private ListadoPacientes listado_p = new ListadoPacientes();
     private ListadoMedicamentos listado_m = new ListadoMedicamentos();
+    private Reposos reposo_m = new Reposos();
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenu Reposos;
     private javax.swing.JDesktopPane desktopPane;
     private javax.swing.JMenuItem i_consulta;
     private javax.swing.JMenuItem i_historias;
@@ -358,6 +387,7 @@ public class MDI extends javax.swing.JFrame {
     private javax.swing.JMenu m_pacientes;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JLabel reloj;
+    private javax.swing.JMenuItem reposo;
     // End of variables declaration//GEN-END:variables
 
 }

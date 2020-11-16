@@ -49,7 +49,7 @@ public class Historias extends javax.swing.JInternalFrame {
         num_historia.setFont(new java.awt.Font("Leelawadee", 1, 16)); // NOI18N
         num_historia.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102)));
         num_historia.setPreferredSize(new java.awt.Dimension(59, 26));
-        jPanel1.add(num_historia, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 90, 160, -1));
+        jPanel1.add(num_historia, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 90, 170, -1));
 
         letra_cedula.setFont(new java.awt.Font("Leelawadee", 1, 16)); // NOI18N
         letra_cedula.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "V-", "E-" }));

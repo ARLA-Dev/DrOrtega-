@@ -1,6 +1,8 @@
 package Globales;
 
 import java.awt.Toolkit;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.swing.JTextField;
 
 public class Globales {
@@ -18,5 +20,15 @@ public class Globales {
             Toolkit.getDefaultToolkit().beep();
             e.consume();
         }
+    }
+
+    public String fecha_al_dia() {
+
+        String pattern = "dd/MM/yyyy";
+
+        SimpleDateFormat sdf = new SimpleDateFormat(pattern);
+
+        String t = sdf.format(new Date());
+        return t;
     }
 }

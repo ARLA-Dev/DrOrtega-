@@ -14,7 +14,7 @@ public class Medicamentos extends javax.swing.JInternalFrame {
         initComponents();
         setSize(1000, 575);
         oculto.setVisible(false);
-        cargarCBMarcas();
+        cargarCBMedicamentos();
 
     }
 
@@ -168,7 +168,7 @@ public class Medicamentos extends javax.swing.JInternalFrame {
         } else {
             OperarMedicamento OP = new OperarMedicamento();
             OP.modificar(Integer.parseInt(oculto.getText()), medicamento_buscado.getText().toUpperCase());
-            cargarCBMarcas();
+            cargarCBMedicamentos();
             limpiarCampos();
         }
     }//GEN-LAST:event_modificarActionPerformed
@@ -177,7 +177,7 @@ public class Medicamentos extends javax.swing.JInternalFrame {
 
         OperarMedicamento OP = new OperarMedicamento();
         OP.borrar(Integer.parseInt(oculto.getText()));
-        cargarCBMarcas();
+        cargarCBMedicamentos();
         limpiarCampos();
     }//GEN-LAST:event_borrarActionPerformed
 
@@ -195,7 +195,7 @@ public class Medicamentos extends javax.swing.JInternalFrame {
         } else {
             OperarMedicamento OP = new OperarMedicamento();
             OP.RegistrarMedicamento(nombreM.getText().toUpperCase());
-            cargarCBMarcas();
+            cargarCBMedicamentos();
             limpiarCampos();
         }
     }//GEN-LAST:event_registrarActionPerformed
@@ -210,7 +210,7 @@ public class Medicamentos extends javax.swing.JInternalFrame {
 
     }
 
-    public void cargarCBMarcas() {
+    public void cargarCBMedicamentos() {
 
         buscado.removeAllItems();
         DesplegableMedicamentos medicamentos = new DesplegableMedicamentos();

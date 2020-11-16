@@ -26,6 +26,5 @@ public class Principal {
             login = new Login();
 
         } while (mdi.getAbierto() == false);
-
     }
 }

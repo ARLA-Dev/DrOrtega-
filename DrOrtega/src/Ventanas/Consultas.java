@@ -1,13 +1,22 @@
 package Ventanas;
 
+import Globales.Globales;
+import Modelos.DesplegableMedicamentos;
+import Modelos.Modelo;
+import Modelos.OperarConsulta;
+import Modelos.OperarPaciente;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+
 public class Consultas extends javax.swing.JInternalFrame {
 
     public Consultas() {
         initComponents();
-        setSize(1000,575);
-        
+        setSize(1000, 575);
+        cargarCBMedicamentos();
+        medicamento.setSelectedIndex(0);
+        fecha.setText(metodos.fecha_al_dia());
     }
-
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -22,7 +31,7 @@ public class Consultas extends javax.swing.JInternalFrame {
         fecha = new javax.swing.JTextField();
         medicamento = new javax.swing.JComboBox<>();
         registrar = new javax.swing.JButton();
-        modificar = new javax.swing.JButton();
+        Incluir_dosis = new javax.swing.JButton();
         limpiar = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
         buscar1 = new javax.swing.JButton();
@@ -82,8 +91,12 @@ public class Consultas extends javax.swing.JInternalFrame {
         jPanel1.add(fecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, 220, -1));
 
         medicamento.setFont(new java.awt.Font("Leelawadee", 1, 16)); // NOI18N
-        medicamento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Medicamento1", "Medicamento2", "Medicamento3", "Medicamento4", "Medicamento5" }));
         medicamento.setBorder(null);
+        medicamento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                medicamentoActionPerformed(evt);
+            }
+        });
         jPanel1.add(medicamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 120, 160, -1));
 
         registrar.setBackground(new java.awt.Color(168, 95, 21));
@@ -96,24 +109,29 @@ public class Consultas extends javax.swing.JInternalFrame {
         registrar.setMaximumSize(new java.awt.Dimension(120, 35));
         registrar.setMinimumSize(new java.awt.Dimension(120, 35));
         registrar.setPreferredSize(new java.awt.Dimension(120, 35));
-        jPanel1.add(registrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 480, -1, -1));
-
-        modificar.setBackground(new java.awt.Color(168, 95, 21));
-        modificar.setFont(new java.awt.Font("Leelawadee", 1, 18)); // NOI18N
-        modificar.setForeground(new java.awt.Color(255, 255, 255));
-        modificar.setText("Añadir");
-        modificar.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(102, 51, 0)));
-        modificar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        modificar.setFocusPainted(false);
-        modificar.setMaximumSize(new java.awt.Dimension(120, 35));
-        modificar.setMinimumSize(new java.awt.Dimension(120, 35));
-        modificar.setPreferredSize(new java.awt.Dimension(120, 35));
-        modificar.addActionListener(new java.awt.event.ActionListener() {
+        registrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                modificarActionPerformed(evt);
+                registrarActionPerformed(evt);
             }
         });
-        jPanel1.add(modificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 160, -1, -1));
+        jPanel1.add(registrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 480, -1, -1));
+
+        Incluir_dosis.setBackground(new java.awt.Color(168, 95, 21));
+        Incluir_dosis.setFont(new java.awt.Font("Leelawadee", 1, 18)); // NOI18N
+        Incluir_dosis.setForeground(new java.awt.Color(255, 255, 255));
+        Incluir_dosis.setText("Añadir");
+        Incluir_dosis.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(102, 51, 0)));
+        Incluir_dosis.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Incluir_dosis.setFocusPainted(false);
+        Incluir_dosis.setMaximumSize(new java.awt.Dimension(120, 35));
+        Incluir_dosis.setMinimumSize(new java.awt.Dimension(120, 35));
+        Incluir_dosis.setPreferredSize(new java.awt.Dimension(120, 35));
+        Incluir_dosis.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Incluir_dosisActionPerformed(evt);
+            }
+        });
+        jPanel1.add(Incluir_dosis, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 160, -1, -1));
 
         limpiar.setBackground(new java.awt.Color(168, 95, 21));
         limpiar.setFont(new java.awt.Font("Leelawadee", 1, 18)); // NOI18N
@@ -141,6 +159,11 @@ public class Consultas extends javax.swing.JInternalFrame {
         buscar1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         buscar1.setFocusPainted(false);
         buscar1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/lupaON.png"))); // NOI18N
+        buscar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buscar1ActionPerformed(evt);
+            }
+        });
         jPanel1.add(buscar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 110, 50, 40));
 
         jLabel4.setFont(new java.awt.Font("Leelawadee", 1, 24)); // NOI18N
@@ -232,6 +255,11 @@ public class Consultas extends javax.swing.JInternalFrame {
         cedula.setFont(new java.awt.Font("Leelawadee", 1, 16)); // NOI18N
         cedula.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102)));
         cedula.setPreferredSize(new java.awt.Dimension(59, 26));
+        cedula.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                cedulaKeyTyped(evt);
+            }
+        });
         jPanel1.add(cedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 120, 160, -1));
 
         jLabel13.setFont(new java.awt.Font("Leelawadee", 1, 16)); // NOI18N
@@ -255,25 +283,101 @@ public class Consultas extends javax.swing.JInternalFrame {
         limpiarCampos();
     }//GEN-LAST:event_limpiarActionPerformed
 
-    private void modificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modificarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_modificarActionPerformed
+    private void Incluir_dosisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Incluir_dosisActionPerformed
 
-    private void limpiarCampos(){
+        recetario.append(medicamento.getSelectedItem() + " " + dosis.getText() + " ->\n");
+        medicamento.setSelectedItem(0);
+        dosis.setText("");
+    }//GEN-LAST:event_Incluir_dosisActionPerformed
+
+    private void medicamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_medicamentoActionPerformed
+
+
+    }//GEN-LAST:event_medicamentoActionPerformed
+
+    private void cedulaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cedulaKeyTyped
+
+        char c = evt.getKeyChar();
+        metodos.soloNumeros(c, evt);
+        metodos.validarLongitud(cedula, 8, evt);
+    }//GEN-LAST:event_cedulaKeyTyped
+
+    private void buscar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscar1ActionPerformed
+
+        id_paciente = 0;
+
+        if (cedula.getText().equals("")) {
+
+            JOptionPane.showMessageDialog(null, "El campo está vacío... Intente de nuevo", "¡ERROR!", JOptionPane.ERROR_MESSAGE);
+        } else {
+            Modelo modelo = new Modelo();
+            modelo = null;
+            OperarPaciente OP = new OperarPaciente();
+            modelo = OP.BuscarPaciente(letra_cedula.getSelectedItem() + "" + cedula.getText());
+
+            if (modelo != null) {
+
+                id_paciente = modelo.getId_paciente();
+                nombreYApellido.setText(modelo.getNombres() + " " + modelo.getApellidos());
+                edad.setText(modelo.getEdad() + "");
+            }
+        }
+    }//GEN-LAST:event_buscar1ActionPerformed
+
+    private void registrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarActionPerformed
+
+        if (id_paciente == 0) {
+
+            JOptionPane.showMessageDialog(null, "Aún no ha buscado un Paciente... Intente de nuevo", "¡ERROR!", JOptionPane.ERROR_MESSAGE);
+            
+        } else if (recetario.getText().equals("") || motivo.getText().equals("") || diagnostico.getText().equals("") || indicaciones.getText().equals("")) {
+            
+           JOptionPane.showMessageDialog(null, "Alguno de los Campos está Vacío... Intente de nuevo", "¡ERROR!", JOptionPane.ERROR_MESSAGE);
+  
+        } else {
+            
+            OperarConsulta op = new OperarConsulta();
+            op.RegistrarConsulta(id_paciente, motivo.getText().toUpperCase(), diagnostico.getText().toUpperCase(), indicaciones.getText().toUpperCase(), recetario.getText().toUpperCase());
+            
+            limpiarCampos();
+        }
+    }//GEN-LAST:event_registrarActionPerformed
+
+    private void limpiarCampos() {
         cedula.setText("");
         nombreYApellido.setText("");
         edad.setText("");
-        fecha.setText("");
         indicaciones.setText("");
         diagnostico.setText("");
         motivo.setText("");
         letra_cedula.setSelectedItem("V-");
         recetario.setText("");
         dosis.setText("");
+        cargarCBMedicamentos();
+        id_paciente = 0;
         medicamento.setSelectedIndex(0);
     }
-    
+
+    public void cargarCBMedicamentos() {
+
+        medicamento.removeAllItems();
+        DesplegableMedicamentos medicamentos = new DesplegableMedicamentos();
+        listaM = medicamentos.DesplegableMedicamentos();
+
+        for (int i = 0; i < listaM.size(); i++) {
+
+            medicamento.addItem(listaM.get(i).getNombreMedicamento());
+        }
+    }
+
+    // Variables Personales
+    private Globales metodos = new Globales();
+    private int id_paciente = 0;
+    ArrayList<Modelo> listaM;
+
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Incluir_dosis;
     private javax.swing.JButton buscar1;
     private javax.swing.JTextField cedula;
     private javax.swing.JTextArea diagnostico;
@@ -306,7 +410,6 @@ public class Consultas extends javax.swing.JInternalFrame {
     private java.awt.Menu menu1;
     private java.awt.Menu menu2;
     private java.awt.MenuBar menuBar1;
-    private javax.swing.JButton modificar;
     private javax.swing.JTextArea motivo;
     private javax.swing.JTextField nombreYApellido;
     private javax.swing.JTextArea recetario;
