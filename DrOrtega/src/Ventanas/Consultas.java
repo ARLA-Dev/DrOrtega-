@@ -1,12 +1,20 @@
 package Ventanas;
 
 import Globales.Globales;
+import Modelos.Conexion;
 import Modelos.DesplegableMedicamentos;
 import Modelos.Modelo;
 import Modelos.OperarConsulta;
 import Modelos.OperarPaciente;
+import com.mysql.jdbc.Connection;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.util.JRLoader;
+import net.sf.jasperreports.view.JasperViewer;
 
 public class Consultas extends javax.swing.JInternalFrame {
 
@@ -329,20 +337,21 @@ public class Consultas extends javax.swing.JInternalFrame {
         if (id_paciente == 0) {
 
             JOptionPane.showMessageDialog(null, "Aún no ha buscado un Paciente... Intente de nuevo", "¡ERROR!", JOptionPane.ERROR_MESSAGE);
-            
+
         } else if (recetario.getText().equals("") || motivo.getText().equals("") || diagnostico.getText().equals("") || indicaciones.getText().equals("")) {
-            
-           JOptionPane.showMessageDialog(null, "Alguno de los Campos está Vacío... Intente de nuevo", "¡ERROR!", JOptionPane.ERROR_MESSAGE);
-  
+
+            JOptionPane.showMessageDialog(null, "Alguno de los Campos está Vacío... Intente de nuevo", "¡ERROR!", JOptionPane.ERROR_MESSAGE);
+
         } else {
-            
+
             OperarConsulta op = new OperarConsulta();
             op.RegistrarConsulta(id_paciente, motivo.getText().toUpperCase(), diagnostico.getText().toUpperCase(), indicaciones.getText().toUpperCase(), recetario.getText().toUpperCase());
-            
+            generar_recipe();            
             limpiarCampos();
         }
     }//GEN-LAST:event_registrarActionPerformed
 
+    // Mis Métodos
     private void limpiarCampos() {
         cedula.setText("");
         nombreYApellido.setText("");
@@ -367,6 +376,30 @@ public class Consultas extends javax.swing.JInternalFrame {
         for (int i = 0; i < listaM.size(); i++) {
 
             medicamento.addItem(listaM.get(i).getNombreMedicamento());
+        }
+    }
+
+    public void generar_recipe() {
+
+        try {
+            Conexion con = new Conexion();
+            Connection conn = con.getConexion();
+
+            JasperReport reporte = null;
+            String path = "src\\Plantillas\\Recipes.jasper";
+
+            reporte = (JasperReport) JRLoader.loadObjectFromFile(path);
+
+            JasperPrint jprint = JasperFillManager.fillReport(reporte, null, conn);
+
+            JasperViewer view = new JasperViewer(jprint, false);
+
+            view.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+
+            view.setVisible(true);
+
+        } catch (JRException ex) {
+            JOptionPane.showMessageDialog(null, "Error");
         }
     }
 
