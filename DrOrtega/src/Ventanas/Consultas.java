@@ -292,8 +292,8 @@ public class Consultas extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_limpiarActionPerformed
 
     private void Incluir_dosisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Incluir_dosisActionPerformed
-
-        recetario.append(medicamento.getSelectedItem() + " " + dosis.getText() + " ->\n");
+        indicaciones.append(medicamento.getSelectedItem() + " " + dosis.getText() + " ->\n");
+        recetario.append(medicamento.getSelectedItem() + " " + dosis.getText() + "\n");
         medicamento.setSelectedItem(0);
         dosis.setText("");
     }//GEN-LAST:event_Incluir_dosisActionPerformed
