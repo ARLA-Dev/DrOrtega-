@@ -35,6 +35,10 @@ public class Medicamentos extends javax.swing.JInternalFrame {
         buscado = new javax.swing.JComboBox<>();
         nombreM = new javax.swing.JTextField();
         medicamento_buscado = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        indicacion = new javax.swing.JTextField();
+        indicacion_buscada = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
 
         setBorder(null);
         setClosable(true);
@@ -74,7 +78,7 @@ public class Medicamentos extends javax.swing.JInternalFrame {
                 registrarActionPerformed(evt);
             }
         });
-        jPanel1.add(registrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 190, -1, 30));
+        jPanel1.add(registrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 230, -1, 30));
 
         modificar.setBackground(new java.awt.Color(168, 95, 21));
         modificar.setFont(new java.awt.Font("Leelawadee", 1, 18)); // NOI18N
@@ -91,7 +95,7 @@ public class Medicamentos extends javax.swing.JInternalFrame {
                 modificarActionPerformed(evt);
             }
         });
-        jPanel1.add(modificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 360, -1, -1));
+        jPanel1.add(modificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 440, -1, -1));
 
         limpiar.setBackground(new java.awt.Color(168, 95, 21));
         limpiar.setFont(new java.awt.Font("Leelawadee", 1, 18)); // NOI18N
@@ -108,7 +112,7 @@ public class Medicamentos extends javax.swing.JInternalFrame {
                 limpiarActionPerformed(evt);
             }
         });
-        jPanel1.add(limpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 410, -1, -1));
+        jPanel1.add(limpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 490, -1, -1));
 
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/johnny.png"))); // NOI18N
         jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 140, -1, -1));
@@ -132,7 +136,7 @@ public class Medicamentos extends javax.swing.JInternalFrame {
                 borrarActionPerformed(evt);
             }
         });
-        jPanel1.add(borrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 360, 120, -1));
+        jPanel1.add(borrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 440, 120, -1));
 
         buscado.setFont(new java.awt.Font("Leelawadee", 1, 16)); // NOI18N
         buscado.setBorder(null);
@@ -141,7 +145,7 @@ public class Medicamentos extends javax.swing.JInternalFrame {
                 buscadoItemStateChanged(evt);
             }
         });
-        jPanel1.add(buscado, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 320, 300, 30));
+        jPanel1.add(buscado, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 320, 630, 30));
 
         nombreM.setFont(new java.awt.Font("Leelawadee", 1, 16)); // NOI18N
         nombreM.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102)));
@@ -151,7 +155,25 @@ public class Medicamentos extends javax.swing.JInternalFrame {
         medicamento_buscado.setFont(new java.awt.Font("Leelawadee", 1, 16)); // NOI18N
         medicamento_buscado.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102)));
         medicamento_buscado.setPreferredSize(new java.awt.Dimension(59, 26));
-        jPanel1.add(medicamento_buscado, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 320, 300, 30));
+        jPanel1.add(medicamento_buscado, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 400, 300, 30));
+
+        jLabel4.setFont(new java.awt.Font("Leelawadee", 1, 24)); // NOI18N
+        jLabel4.setText("Indicación");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 150, -1, -1));
+
+        indicacion.setFont(new java.awt.Font("Leelawadee", 1, 16)); // NOI18N
+        indicacion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102)));
+        indicacion.setPreferredSize(new java.awt.Dimension(59, 26));
+        jPanel1.add(indicacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 190, 300, 30));
+
+        indicacion_buscada.setFont(new java.awt.Font("Leelawadee", 1, 16)); // NOI18N
+        indicacion_buscada.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102)));
+        indicacion_buscada.setPreferredSize(new java.awt.Dimension(59, 26));
+        jPanel1.add(indicacion_buscada, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 400, 300, 30));
+
+        jLabel6.setFont(new java.awt.Font("Leelawadee", 1, 24)); // NOI18N
+        jLabel6.setText("Indicación Buscada");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 360, -1, -1));
 
         getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
 
@@ -163,11 +185,11 @@ public class Medicamentos extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_limpiarActionPerformed
 
     private void modificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modificarActionPerformed
-        if (medicamento_buscado.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "Campo vacío... Intente de nuevo", "¡ERROR!", JOptionPane.ERROR_MESSAGE);
+        if (medicamento_buscado.getText().equals("") || indicacion_buscada.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Algún campo está vacío... Intente de nuevo", "¡ERROR!", JOptionPane.ERROR_MESSAGE);
         } else {
             OperarMedicamento OP = new OperarMedicamento();
-            OP.modificar(Integer.parseInt(oculto.getText()), medicamento_buscado.getText().toUpperCase());
+            OP.modificar(Integer.parseInt(oculto.getText()), medicamento_buscado.getText().toUpperCase(),indicacion_buscada.getText().toUpperCase());
             cargarCBMedicamentos();
             limpiarCampos();
         }
@@ -183,18 +205,20 @@ public class Medicamentos extends javax.swing.JInternalFrame {
 
     private void buscadoItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_buscadoItemStateChanged
         if (evt.getStateChange() == ItemEvent.SELECTED) {
-
+            
             oculto.setText(listaM.get(buscado.getSelectedIndex()).getId_medicamento() + "");
-            medicamento_buscado.setText(buscado.getSelectedItem() + "");
+            int id = buscado.getSelectedIndex();
+            medicamento_buscado.setText(listaM.get(id).getNombreMedicamento() + "");
+            indicacion_buscada.setText(listaM.get(id).getIndicacionMedicamento() + "");
         }
     }//GEN-LAST:event_buscadoItemStateChanged
 
     private void registrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarActionPerformed
-        if (nombreM.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "Campo vacío... Intente de nuevo", "¡ERROR!", JOptionPane.ERROR_MESSAGE);
+        if (nombreM.getText().equals("")|| indicacion_buscada.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Algún campo está vacío... Intente de nuevo", "¡ERROR!", JOptionPane.ERROR_MESSAGE);
         } else {
             OperarMedicamento OP = new OperarMedicamento();
-            OP.RegistrarMedicamento(nombreM.getText().toUpperCase());
+            OP.RegistrarMedicamento(nombreM.getText().toUpperCase(), indicacion.getText().toUpperCase());
             cargarCBMedicamentos();
             limpiarCampos();
         }
@@ -203,10 +227,15 @@ public class Medicamentos extends javax.swing.JInternalFrame {
    //METODOS PERSONALES
     
     private void limpiarCampos() {
+        
+        cargarCBMedicamentos();
+        oculto.setText(listaM.get(0).getId_medicamento() +"");
         buscado.setSelectedIndex(0);
-        oculto.setText("0");
+        int id = buscado.getSelectedIndex();
         nombreM.setText("");
-        medicamento_buscado.setText(buscado.getSelectedItem() + "");
+        indicacion.setText("");
+        medicamento_buscado.setText(listaM.get(id).getNombreMedicamento() + "");
+        indicacion_buscada.setText(listaM.get(id).getIndicacionMedicamento()+ "");
 
     }
 
@@ -218,7 +247,7 @@ public class Medicamentos extends javax.swing.JInternalFrame {
 
         for (int i = 0; i < listaM.size(); i++) {
 
-            buscado.addItem(listaM.get(i).getNombreMedicamento());
+            buscado.addItem(listaM.get(i).getNombreMedicamento() + " | " + listaM.get(i).getIndicacionMedicamento());
             oculto.setText(listaM.get(i).getId_medicamento() + "");
         }
         oculto.setText(listaM.get(0).getId_medicamento() + "");
@@ -228,10 +257,14 @@ public class Medicamentos extends javax.swing.JInternalFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton borrar;
     private javax.swing.JComboBox<String> buscado;
+    private javax.swing.JTextField indicacion;
+    private javax.swing.JTextField indicacion_buscada;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton limpiar;
     private javax.swing.JTextField medicamento_buscado;

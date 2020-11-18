@@ -8,14 +8,14 @@ public class OperarMedicamento {
 
     private Modelo modelo = null;
 
-    public boolean RegistrarMedicamento(String nombre) {
+    public boolean RegistrarMedicamento(String nombre, String indicaciones) {
         int op = 0;
         ResultSet rs = null;
         Modelo modelo = new Modelo();
         BDConex bd = new BDConex();
         boolean correcto = false;
 
-        rs = bd.consultar("SELECT * FROM `medicamentos` WHERE `nombre_m` = \"" + nombre + "\" AND borrado=0");
+        rs = bd.consultar("SELECT * FROM `medicamentos` WHERE `nombre_m` = \"" + nombre + "\" AND borrado=0 AND `indicaciones` = '" + indicaciones + "';");
 
         try {
             if (rs.first()) {
@@ -24,7 +24,7 @@ public class OperarMedicamento {
 
             } else {
 
-                op = bd.ejecutar("INSERT INTO `medicamentos` (`id_medicamento`, `nombre_m`, `borrado`) VALUES (NULL, '" + nombre + "', '0');");
+                op = bd.ejecutar("INSERT INTO `medicamentos` (`id_medicamento`, `nombre_m`,`indicaciones`, `borrado`) VALUES (NULL, '" + nombre + "','"+indicaciones+"', '0');");
 
                 if (op > 0) {
 
@@ -64,13 +64,13 @@ public class OperarMedicamento {
         return correcto;
     }
 
-    public boolean modificar(int id, String nombre) {
+    public boolean modificar(int id, String nombre, String indicaciones) {
         int op = 0;
         BDConex bd = new BDConex();
         boolean correcto = false;
         ResultSet rs = null;
 
-        rs = bd.consultar("SELECT * FROM `medicamentos` WHERE `nombre_m` = \"" + nombre + "\" AND borrado=0");
+        rs = bd.consultar("SELECT * FROM `medicamentos` WHERE `nombre_m` = \"" + nombre + "\" AND borrado=0 AND `indicaciones` = '" + indicaciones + "';");
 
         try {
             if (rs.first()) {
@@ -79,7 +79,7 @@ public class OperarMedicamento {
 
             } else {
 
-                op = bd.ejecutar("UPDATE `medicamentos` SET `nombre_m` = '" + nombre + "' WHERE `id_medicamento` ='" + id + "' AND `borrado`= '0';");
+                op = bd.ejecutar("UPDATE `medicamentos` SET `nombre_m` = '" + nombre + "', `indicaciones` = '" + indicaciones + "' WHERE `id_medicamento` ='" + id + "' AND `borrado`= '0';");
 
                 if (op > 0) {
                     correcto = true;

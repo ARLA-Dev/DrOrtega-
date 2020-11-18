@@ -93,8 +93,16 @@ public class Modelo {
         this.id_medicamento = id_medicamento;
     }
     
-    
-   String nombreMedicamento;
+    public String getIndicacionMedicamento() {
+        return indicacionMedicamento;
+    }
+
+    public void setIndicacionMedicamento(String indicacionMedicamento) {
+        this.indicacionMedicamento = indicacionMedicamento;
+    }
    int id_medicamento;
+   String nombreMedicamento, indicacionMedicamento;
+
+    
     
 }

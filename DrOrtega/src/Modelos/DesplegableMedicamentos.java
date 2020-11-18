@@ -31,6 +31,7 @@ public class DesplegableMedicamentos {
                         iv = new Modelo();
                         iv.setId_medicamento(Integer.parseInt(result.getString("id_medicamento")));
                         iv.setNombreMedicamento(result.getString("nombre_m"));
+                        iv.setIndicacionMedicamento(result.getString("indicaciones"));
 		          
                         lista.add(iv);
 		    }  

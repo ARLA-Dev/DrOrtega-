@@ -105,7 +105,7 @@ public class Consultas extends javax.swing.JInternalFrame {
                 medicamentoActionPerformed(evt);
             }
         });
-        jPanel1.add(medicamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 120, 160, -1));
+        jPanel1.add(medicamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 120, 410, -1));
 
         registrar.setBackground(new java.awt.Color(168, 95, 21));
         registrar.setFont(new java.awt.Font("Leelawadee", 1, 18)); // NOI18N
@@ -139,7 +139,7 @@ public class Consultas extends javax.swing.JInternalFrame {
                 Incluir_dosisActionPerformed(evt);
             }
         });
-        jPanel1.add(Incluir_dosis, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 160, -1, -1));
+        jPanel1.add(Incluir_dosis, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 170, -1, -1));
 
         limpiar.setBackground(new java.awt.Color(168, 95, 21));
         limpiar.setFont(new java.awt.Font("Leelawadee", 1, 18)); // NOI18N
@@ -181,7 +181,7 @@ public class Consultas extends javax.swing.JInternalFrame {
         dosis.setFont(new java.awt.Font("Leelawadee", 1, 16)); // NOI18N
         dosis.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102)));
         dosis.setPreferredSize(new java.awt.Dimension(59, 26));
-        jPanel1.add(dosis, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 120, 250, -1));
+        jPanel1.add(dosis, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 180, 280, -1));
 
         jLabel5.setFont(new java.awt.Font("Leelawadee", 1, 24)); // NOI18N
         jLabel5.setText("Nombre y Apellido");
@@ -276,7 +276,7 @@ public class Consultas extends javax.swing.JInternalFrame {
 
         jLabel14.setFont(new java.awt.Font("Leelawadee", 1, 24)); // NOI18N
         jLabel14.setText("Dosis");
-        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 90, -1, -1));
+        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 150, -1, -1));
 
         jLabel15.setFont(new java.awt.Font("Leelawadee", 1, 19)); // NOI18N
         jLabel15.setText("Dr Johnny Ortega");
@@ -292,8 +292,9 @@ public class Consultas extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_limpiarActionPerformed
 
     private void Incluir_dosisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Incluir_dosisActionPerformed
-        indicaciones.append(medicamento.getSelectedItem() + " " + dosis.getText() + " ->\n");
-        recetario.append(medicamento.getSelectedItem() + " " + dosis.getText() + "\n");
+
+        indicaciones.append(listaM.get(medicamento.getSelectedIndex()).getNombreMedicamento()+ " " + dosis.getText() + " -> "+ listaM.get(medicamento.getSelectedIndex()).getIndicacionMedicamento()+"\n");
+        recetario.append(listaM.get(medicamento.getSelectedIndex()).getNombreMedicamento()+ " " + dosis.getText()+"\n");
         medicamento.setSelectedItem(0);
         dosis.setText("");
     }//GEN-LAST:event_Incluir_dosisActionPerformed
@@ -375,7 +376,7 @@ public class Consultas extends javax.swing.JInternalFrame {
 
         for (int i = 0; i < listaM.size(); i++) {
 
-            medicamento.addItem(listaM.get(i).getNombreMedicamento());
+            medicamento.addItem(listaM.get(i).getNombreMedicamento() +" | "+ listaM.get(i).getIndicacionMedicamento());
         }
     }
 
