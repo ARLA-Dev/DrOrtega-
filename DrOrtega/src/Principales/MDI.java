@@ -87,7 +87,8 @@ public class MDI extends javax.swing.JFrame {
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setFont(new java.awt.Font("Leelawadee", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("ortegajohnny1966@hotmail.com");
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("ortegajohnny@hotmail.com");
 
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setFont(new java.awt.Font("Leelawadee", 1, 36)); // NOI18N
@@ -97,7 +98,7 @@ public class MDI extends javax.swing.JFrame {
         jLabel4.setBackground(new java.awt.Color(255, 255, 255));
         jLabel4.setFont(new java.awt.Font("Leelawadee", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Tlf: 0000-1234567");
+        jLabel4.setText("Tlf: 0424-5147683");
 
         desktopPane.setLayer(reloj, javax.swing.JLayeredPane.DEFAULT_LAYER);
         desktopPane.setLayer(jLabel11, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -118,15 +119,14 @@ public class MDI extends javax.swing.JFrame {
                         .addGap(350, 350, 350)
                         .addComponent(jLabel3))
                     .addGroup(desktopPaneLayout.createSequentialGroup()
-                        .addGap(310, 310, 310)
-                        .addComponent(jLabel2))
-                    .addGroup(desktopPaneLayout.createSequentialGroup()
                         .addGap(430, 430, 430)
                         .addComponent(jLabel4))
                     .addGroup(desktopPaneLayout.createSequentialGroup()
                         .addGap(340, 340, 340)
-                        .addComponent(reloj, javax.swing.GroupLayout.PREFERRED_SIZE, 372, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(312, Short.MAX_VALUE))
+                        .addGroup(desktopPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(reloj, javax.swing.GroupLayout.PREFERRED_SIZE, 372, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(303, 303, 303))
         );
         desktopPaneLayout.setVerticalGroup(
             desktopPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -288,9 +288,7 @@ public class MDI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void i_pacientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_i_pacientesActionPerformed
-
         pacientes.setVisible(true);
-
     }//GEN-LAST:event_i_pacientesActionPerformed
 
     private void i_medicamentosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_i_medicamentosActionPerformed

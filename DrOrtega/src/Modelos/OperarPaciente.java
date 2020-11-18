@@ -25,7 +25,7 @@ public class OperarPaciente {
 
             } else {
 
-                op = bd.ejecutar("INSERT INTO `dr_johnny`.`pacientes` (`id_paciente`, `cedula`, `nombre`, `apellido`, `edad`, `direccion`, `telefono_fijo`, `telefono_movil`, `antecedentes_f`, `antecedentes_p`) VALUES (NULL, '" + cedula + "', '" + nombre + "', '" + apellido + "', " + edad + ", '" + direccion + "', '" + fijo + "', '" + movil + "', '" + ap + "', '" + af + "');");
+                op = bd.ejecutar("INSERT INTO `dr_johnny`.`pacientes` (`id_paciente`, `cedula`, `nombre`, `apellido`, `edad`, `direccion`, `telefono_fijo`, `telefono_movil`, `antecedentes_f`, `antecedentes_p`) VALUES (NULL, '" + cedula + "', '" + nombre + "', '" + apellido + "', " + edad + ", '" + direccion + "', '" + fijo + "', '" + movil + "', '" + af + "', '" + ap + "');");
 
                 if (op > 0) {
 
