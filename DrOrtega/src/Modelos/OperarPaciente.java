@@ -1,7 +1,10 @@
 package Modelos;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import jdk.nashorn.internal.scripts.JO;
 
@@ -144,5 +147,53 @@ public class OperarPaciente {
         bd.desconectar();
         return correcto;
 
+    }
+    
+    public ArrayList BuscarconMatriz() {
+
+        ArrayList lista = new ArrayList<>();
+        int op = 0;
+        BDConex bd = new BDConex();
+        boolean correcto = false;
+        PreparedStatement statement = null;
+        ResultSet result = null;
+        Connection connection;
+
+        Modelo iv;
+        connection = bd.getConexion();
+
+        try {
+
+            if (connection != null) {
+
+                result = bd.consultar("SELECT * FROM `pacientes`");
+
+                while (result.next() == true) {
+                    iv = new Modelo();
+                    iv.setId_paciente(result.getInt("id_paciente"));
+                    iv.setNombres(result.getString("nombre"));
+                    iv.setApellidos(result.getString("apellido"));
+                    iv.setCedula(result.getString("cedula"));
+                    iv.setEdad(result.getInt("edad"));
+                    lista.add(iv);
+                }
+            }
+        } catch (SQLException e) {
+
+            System.out.println(e);
+
+        } finally {
+
+            try {
+
+                connection.close();
+                bd.desconectar();
+
+            } catch (SQLException e) {
+
+                e.printStackTrace();
+            }
+        }
+        return lista;
     }
 }

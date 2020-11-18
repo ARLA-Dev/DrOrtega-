@@ -1,14 +1,22 @@
 package Ventanas;
 
+import Globales.Globales;
+import Globales.WordWrapRenderer;
+import Modelos.Modelo;
+import Modelos.OperarConsulta;
+import Modelos.OperarPaciente;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 public class Historias extends javax.swing.JInternalFrame {
 
     public Historias() {
         initComponents();
-        setSize(1000,575);
+        setSize(1000, 575);
         historia.getTableHeader().setReorderingAllowed(false);
-        
-    }
 
+    }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -46,6 +54,7 @@ public class Historias extends javax.swing.JInternalFrame {
         jLabel3.setText("N° de Historia");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 60, -1, -1));
 
+        num_historia.setEditable(false);
         num_historia.setFont(new java.awt.Font("Leelawadee", 1, 16)); // NOI18N
         num_historia.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102)));
         num_historia.setPreferredSize(new java.awt.Dimension(59, 26));
@@ -62,6 +71,11 @@ public class Historias extends javax.swing.JInternalFrame {
         buscar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         buscar.setFocusPainted(false);
         buscar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/lupaON.png"))); // NOI18N
+        buscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buscarActionPerformed(evt);
+            }
+        });
         jPanel1.add(buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 80, 50, 40));
 
         limpiar.setBackground(new java.awt.Color(168, 95, 21));
@@ -102,10 +116,6 @@ public class Historias extends javax.swing.JInternalFrame {
             }
         });
         historia.setColumnSelectionAllowed(true);
-        historia.setEnabled(false);
-        historia.setFocusable(false);
-        historia.setRequestFocusEnabled(false);
-        historia.setRowSelectionAllowed(false);
         jScrollPane1.setViewportView(historia);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 980, 410));
@@ -113,6 +123,11 @@ public class Historias extends javax.swing.JInternalFrame {
         cedula.setFont(new java.awt.Font("Leelawadee", 1, 16)); // NOI18N
         cedula.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102)));
         cedula.setPreferredSize(new java.awt.Dimension(59, 26));
+        cedula.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                cedulaKeyTyped(evt);
+            }
+        });
         jPanel1.add(cedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 90, 150, -1));
 
         jLabel4.setFont(new java.awt.Font("Leelawadee", 1, 24)); // NOI18N
@@ -123,6 +138,7 @@ public class Historias extends javax.swing.JInternalFrame {
         jLabel5.setText("Nombre y Apellido");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 60, -1, -1));
 
+        nombreYApellido.setEditable(false);
         nombreYApellido.setFont(new java.awt.Font("Leelawadee", 1, 16)); // NOI18N
         nombreYApellido.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102)));
         nombreYApellido.setPreferredSize(new java.awt.Dimension(59, 26));
@@ -137,17 +153,64 @@ public class Historias extends javax.swing.JInternalFrame {
         limpiarCampos();
     }//GEN-LAST:event_limpiarActionPerformed
 
+    private void cedulaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cedulaKeyTyped
+
+        char c = evt.getKeyChar();
+        metodos.soloNumeros(c, evt);
+        metodos.validarLongitud(cedula, 8, evt);
+    }//GEN-LAST:event_cedulaKeyTyped
+
+    private void buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarActionPerformed
+
+        if (cedula.getText().equals("")) {
+
+            JOptionPane.showMessageDialog(null, "El campo está vacío... Intente de nuevo", "¡ERROR!", JOptionPane.ERROR_MESSAGE);
+            
+        } else {
+           
+            obtenerMatriz();          
+        }    
+    }//GEN-LAST:event_buscarActionPerformed
     
+
     //Mis Metodos
-    
-    private void limpiarCampos(){
+    public void obtenerMatriz() {
+
+        OperarConsulta op = new OperarConsulta();
+        ArrayList<Modelo> miLista = op.BuscarconMatriz(letra_cedula.getSelectedItem() + "" + cedula.getText());
+        DefaultTableModel model = (DefaultTableModel) historia.getModel();
+
+        model.setRowCount(0);
+        
+        if (miLista.size() > 0){
+            
+            historia.getColumnModel().getColumn(0).setCellRenderer(new WordWrapRenderer());
+            historia.getColumnModel().getColumn(1).setCellRenderer(new WordWrapRenderer());
+            historia.getColumnModel().getColumn(2).setCellRenderer(new WordWrapRenderer());
+            historia.getColumnModel().getColumn(3).setCellRenderer(new WordWrapRenderer());
+            historia.getColumnModel().getColumn(4).setCellRenderer(new WordWrapRenderer());
+
+            for (int i = 0; i < miLista.size(); i++) {
+                
+                nombreYApellido.setText(miLista.get(i).getNombres() +" "+ miLista.get(i).getApellidos());
+                num_historia.setText(miLista.get(i).getId_paciente() +"");
+                
+                model.addRow(new Object[]{miLista.get(i).getFecha(), miLista.get(i).getMotivo(),miLista.get(i).getDiagnostico(), miLista.get(i).getIndicaciones(), miLista.get(i).getRecetario()});
+              
+                
+            }                    
+        }     
+    }
+    private void limpiarCampos() {
         cedula.setText("");
         letra_cedula.setSelectedItem("V-");
         nombreYApellido.setText("");
         num_historia.setText("");
-        historia.getModel();
-        
+        DefaultTableModel model = (DefaultTableModel) historia.getModel();
+        model.setRowCount(0);
     }
+    
+    Globales metodos = new Globales();
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buscar;

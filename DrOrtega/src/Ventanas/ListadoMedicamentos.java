@@ -1,14 +1,18 @@
 package Ventanas;
 
+import Modelos.OperarMedicamento;
+import java.util.ArrayList;
+import Modelos.Modelo;
+import javax.swing.table.DefaultTableModel;
+
 public class ListadoMedicamentos extends javax.swing.JInternalFrame {
 
     public ListadoMedicamentos() {
         initComponents();
-        setSize(1000,575);
+        setSize(1000, 575);
         listado.getTableHeader().setReorderingAllowed(false);
-        
+        obtenerMatriz();
     }
-
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -40,17 +44,17 @@ public class ListadoMedicamentos extends javax.swing.JInternalFrame {
         listado.setFont(new java.awt.Font("Leelawadee", 1, 12)); // NOI18N
         listado.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null},
-                {null},
-                {null},
-                {null}
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
             },
             new String [] {
-                "Nombre del Medicamento"
+                "Nombre del Medicamento", "Indicación"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false
+                false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -71,6 +75,19 @@ public class ListadoMedicamentos extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //Métodos Personales
+    public void obtenerMatriz() {
+
+        OperarMedicamento op = new OperarMedicamento();
+        ArrayList<Modelo> miLista = op.BuscarconMatriz();
+        DefaultTableModel model = (DefaultTableModel) listado.getModel();
+
+        model.setRowCount(0);
+        for (int i = 0; i < miLista.size(); i++) {
+
+            model.addRow(new Object[]{miLista.get(i).getNombreMedicamento(), miLista.get(i).getIndicacionMedicamento()});
+        }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;

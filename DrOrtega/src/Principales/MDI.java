@@ -302,10 +302,12 @@ public class MDI extends javax.swing.JFrame {
 
     private void i_lpacientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_i_lpacientesActionPerformed
         listado_p.setVisible(true);
+        listado_p.obtenerMatriz();
     }//GEN-LAST:event_i_lpacientesActionPerformed
 
     private void i_lmedicamentosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_i_lmedicamentosActionPerformed
         listado_m.setVisible(true);
+        listado_m.obtenerMatriz();
     }//GEN-LAST:event_i_lmedicamentosActionPerformed
 
     private void reposoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reposoActionPerformed

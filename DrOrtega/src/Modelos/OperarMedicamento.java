@@ -1,7 +1,10 @@
 package Modelos;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 public class OperarMedicamento {
@@ -97,6 +100,51 @@ public class OperarMedicamento {
 
         bd.desconectar();
         return correcto;
+    }
+    
+    public ArrayList BuscarconMatriz() {
+
+        ArrayList lista = new ArrayList<>();
+        int op = 0;
+        BDConex bd = new BDConex();
+        boolean correcto = false;
+        PreparedStatement statement = null;
+        ResultSet result = null;
+        Connection connection;
+
+        Modelo iv;
+        connection = bd.getConexion();
+
+        try {
+
+            if (connection != null) {
+
+                result = bd.consultar("SELECT * FROM `medicamentos` WHERE `borrado`=0");
+
+                while (result.next() == true) {
+                    iv = new Modelo();
+                    iv.setNombreMedicamento(result.getString("nombre_m"));
+                    iv.setIndicacionMedicamento(result.getString("indicaciones"));
+                    lista.add(iv);
+                }
+            }
+        } catch (SQLException e) {
+
+            System.out.println(e);
+
+        } finally {
+
+            try {
+
+                connection.close();
+                bd.desconectar();
+
+            } catch (SQLException e) {
+
+                e.printStackTrace();
+            }
+        }
+        return lista;
     }
 
 }

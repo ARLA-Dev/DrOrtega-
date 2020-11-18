@@ -100,9 +100,55 @@ public class Modelo {
     public void setIndicacionMedicamento(String indicacionMedicamento) {
         this.indicacionMedicamento = indicacionMedicamento;
     }
-   int id_medicamento;
-   String nombreMedicamento, indicacionMedicamento;
+   
+    public String getCedula() {
+        return cedula;
+    }
 
+    public void setCedula(String cedula) {
+        this.cedula = cedula;
+    }
     
+    public String getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
+    }
+       
+    public String getMotivo() {
+        return motivo;
+    }
+
+    public void setMotivo(String motivo) {
+        this.motivo = motivo;
+    }
+
+    public String getDiagnostico() {
+        return diagnostico;
+    }
+
+    public void setDiagnostico(String diagnostico) {
+        this.diagnostico = diagnostico;
+    }
+
+    public String getIndicaciones() {
+        return indicaciones;
+    }
+
+    public void setIndicaciones(String indicaciones) {
+        this.indicaciones = indicaciones;
+    }
+
+    public String getRecetario() {
+        return recetario;
+    }
+
+    public void setRecetario(String recetario) {
+        this.recetario = recetario;
+    }
     
+    int id_medicamento;
+    String nombreMedicamento, indicacionMedicamento, cedula, fecha, motivo, diagnostico, indicaciones, recetario;
 }

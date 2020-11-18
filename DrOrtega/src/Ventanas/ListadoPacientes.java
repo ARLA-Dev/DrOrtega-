@@ -1,12 +1,17 @@
 package Ventanas;
 
+import Modelos.Modelo;
+import Modelos.OperarPaciente;
+import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
+
 public class ListadoPacientes extends javax.swing.JInternalFrame {
 
     public ListadoPacientes() {
         initComponents();
         setSize(1000,575);
         listado.getTableHeader().setReorderingAllowed(false);
-        
+        obtenerMatriz();
     }
 
 
@@ -71,7 +76,20 @@ public class ListadoPacientes extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //Mis Métodos
+    public void obtenerMatriz() {
 
+        OperarPaciente op = new OperarPaciente();
+        ArrayList<Modelo> miLista = op.BuscarconMatriz();
+        DefaultTableModel model = (DefaultTableModel) listado.getModel();
+
+        model.setRowCount(0);
+        for (int i = 0; i < miLista.size(); i++) {
+
+            model.addRow(new Object[]{miLista.get(i).getId_paciente(), miLista.get(i).getNombres(),miLista.get(i).getApellidos(), miLista.get(i).getCedula(), miLista.get(i).getEdad()});
+        }
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
