@@ -65,35 +65,14 @@ C.I: V6154092      TLF:   0424-5147683
 				<text><![CDATA[Indicaciones]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="0" y="52" width="358" height="20"/>
-				<textElement>
-					<font fontName="Leelawadee" size="12" isBold="false"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="0" y="32" width="358" height="20"/>
-				<textElement>
-					<font fontName="Leelawadee" size="12" isBold="false"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{cedula}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="0" y="72" width="358" height="20"/>
-				<textElement>
-					<font fontName="Leelawadee" size="12" isBold="false"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{apellido}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="19" y="105" width="339" height="133"/>
+				<reportElement x="19" y="42" width="339" height="196"/>
 				<textElement>
 					<font fontName="Leelawadee" size="12" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{recetario}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="396" y="52" width="339" height="186"/>
+				<reportElement x="396" y="42" width="339" height="196"/>
 				<textElement>
 					<font fontName="Leelawadee" size="12" isBold="true"/>
 				</textElement>
@@ -102,41 +81,97 @@ C.I: V6154092      TLF:   0424-5147683
 		</band>
 	</detail>
 	<pageFooter>
-		<band height="59" splitType="Stretch">
-			<textField pattern="EEEEE dd MMMMM yyyy">
-				<reportElement x="0" y="39" width="172" height="20"/>
-				<textElement>
-					<font fontName="Leelawadee" size="12" isBold="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
-			</textField>
-			<textField pattern="EEEEE dd MMMMM yyyy">
-				<reportElement x="377" y="39" width="169" height="20"/>
-				<textElement>
-					<font fontName="Leelawadee" size="12" isBold="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
-			</textField>
+		<band height="132" splitType="Stretch">
 			<staticText>
-				<reportElement x="188" y="39" width="34" height="20"/>
+				<reportElement x="188" y="106" width="34" height="20"/>
 				<textElement>
 					<font fontName="Leelawadee" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Firma]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="565" y="39" width="34" height="20"/>
+				<reportElement x="565" y="106" width="34" height="20"/>
 				<textElement>
 					<font fontName="Leelawadee" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Firma]]></text>
 			</staticText>
 			<line>
-				<reportElement x="604" y="53" width="131" height="1"/>
+				<reportElement x="604" y="120" width="131" height="1"/>
 			</line>
 			<line>
-				<reportElement x="227" y="53" width="120" height="1"/>
+				<reportElement x="227" y="120" width="120" height="1"/>
 			</line>
+			<staticText>
+				<reportElement x="6" y="105" width="83" height="15"/>
+				<textElement>
+					<font fontName="Leelawadee" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Barquisimeto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="380" y="105" width="83" height="15"/>
+				<textElement>
+					<font fontName="Leelawadee" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Barquisimeto]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="89" y="105" width="78" height="20"/>
+				<textElement>
+					<font fontName="Leelawadee" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="463" y="106" width="78" height="20"/>
+				<textElement>
+					<font fontName="Leelawadee" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="358" height="20"/>
+				<textElement>
+					<font fontName="Leelawadee" size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cedula}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="20" width="358" height="20"/>
+				<textElement>
+					<font fontName="Leelawadee" size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="40" width="358" height="20"/>
+				<textElement>
+					<font fontName="Leelawadee" size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{apellido}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="380" y="20" width="358" height="20"/>
+				<textElement>
+					<font fontName="Leelawadee" size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="380" y="0" width="358" height="20"/>
+				<textElement>
+					<font fontName="Leelawadee" size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cedula}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="380" y="40" width="358" height="20"/>
+				<textElement>
+					<font fontName="Leelawadee" size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{apellido}]]></textFieldExpression>
+			</textField>
 		</band>
 	</pageFooter>
 </jasperReport>

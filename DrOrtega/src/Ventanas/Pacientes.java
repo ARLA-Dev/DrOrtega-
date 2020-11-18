@@ -275,7 +275,7 @@ public class Pacientes extends javax.swing.JInternalFrame {
 
             JOptionPane.showMessageDialog(null, "Faltan números en la cédula o los teléfonos", "ERROR", JOptionPane.ERROR_MESSAGE);
 
-        }else if (Integer.parseInt(edad.getText()) < 0 || Integer.parseInt(edad.getText()) > 150) {
+        } else if (Integer.parseInt(edad.getText()) < 0 || Integer.parseInt(edad.getText()) > 150) {
 
             JOptionPane.showMessageDialog(null, "Edad no válida", "ERROR", JOptionPane.ERROR_MESSAGE);
 
@@ -310,10 +310,10 @@ public class Pacientes extends javax.swing.JInternalFrame {
 
             JOptionPane.showMessageDialog(null, "¡Algún campo importante está vacío!", "ERROR", JOptionPane.ERROR_MESSAGE);
 
-        } else if (cedula.getText().length() < 7 || movil.getText().length() != 7 || fijo.getText().length() != 11) {
+        } else if (!((cedula.getText().length() < 7 || movil.getText().length() != 7)||(cedula.getText().length() < 7 || fijo.getText().length() != 11))) {
 
             JOptionPane.showMessageDialog(null, "Faltan números en la cédula o los teléfonos", "ERROR", JOptionPane.ERROR_MESSAGE);
-
+            
         } else if (Integer.parseInt(edad.getText()) < 0 || Integer.parseInt(edad.getText()) > 150) {
 
             JOptionPane.showMessageDialog(null, "Edad no válida", "ERROR", JOptionPane.ERROR_MESSAGE);
