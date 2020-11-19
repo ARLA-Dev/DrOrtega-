@@ -26,7 +26,7 @@
 			</image>
 			<staticText>
 				<reportElement x="89" y="7" width="258" height="72"/>
-				<textElement textAlignment="Center">
+				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Leelawadee" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[DR.  JOHNNY H.  ORTEGA  V.
@@ -37,7 +37,7 @@ C.I: V6154092      TLF:   0424-5147683
 			</staticText>
 			<staticText>
 				<reportElement x="463" y="7" width="260" height="72"/>
-				<textElement textAlignment="Center">
+				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Leelawadee" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[DR.  JOHNNY H.  ORTEGA  V.

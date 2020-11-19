@@ -7,7 +7,7 @@ import Ventanas.ListadoMedicamentos;
 import Ventanas.ListadoPacientes;
 import Ventanas.Medicamentos;
 import Ventanas.Pacientes;
-import Ventanas.Reposos;
+import Ventanas.Documentos;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Toolkit;
@@ -70,7 +70,7 @@ public class MDI extends javax.swing.JFrame {
         i_lpacientes = new javax.swing.JMenuItem();
         i_lmedicamentos = new javax.swing.JMenuItem();
         Reposos = new javax.swing.JMenu();
-        reposo = new javax.swing.JMenuItem();
+        documentos = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Dr. Johnny Ortega");
@@ -252,19 +252,19 @@ public class MDI extends javax.swing.JFrame {
         Reposos.setBackground(new java.awt.Color(255, 255, 255));
         Reposos.setBorder(BorderFactory.createMatteBorder(0, 0, 0, 1, Color.BLACK));
         Reposos.setMnemonic('h');
-        Reposos.setText("Reposos");
+        Reposos.setText("Documentos");
         Reposos.setFont(new java.awt.Font("Leelawadee", 1, 18)); // NOI18N
 
-        reposo.setFont(new java.awt.Font("Leelawadee", 1, 14)); // NOI18N
-        reposo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/paciente.png"))); // NOI18N
-        reposo.setMnemonic('c');
-        reposo.setText("Generar Reposo");
-        reposo.addActionListener(new java.awt.event.ActionListener() {
+        documentos.setFont(new java.awt.Font("Leelawadee", 1, 14)); // NOI18N
+        documentos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/documento.png"))); // NOI18N
+        documentos.setMnemonic('c');
+        documentos.setText("Generar Documentos");
+        documentos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                reposoActionPerformed(evt);
+                documentosActionPerformed(evt);
             }
         });
-        Reposos.add(reposo);
+        Reposos.add(documentos);
 
         menuBar.add(Reposos);
 
@@ -310,9 +310,9 @@ public class MDI extends javax.swing.JFrame {
         listado_m.obtenerMatriz();
     }//GEN-LAST:event_i_lmedicamentosActionPerformed
 
-    private void reposoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reposoActionPerformed
+    private void documentosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_documentosActionPerformed
        reposo_m.setVisible(true);
-    }//GEN-LAST:event_reposoActionPerformed
+    }//GEN-LAST:event_documentosActionPerformed
 
     //MIS METODOS
     public void close() {
@@ -362,11 +362,12 @@ public class MDI extends javax.swing.JFrame {
     private Historias historias = new Historias();
     private ListadoPacientes listado_p = new ListadoPacientes();
     private ListadoMedicamentos listado_m = new ListadoMedicamentos();
-    private Reposos reposo_m = new Reposos();
+    private Documentos reposo_m = new Documentos();
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu Reposos;
     private javax.swing.JDesktopPane desktopPane;
+    private javax.swing.JMenuItem documentos;
     private javax.swing.JMenuItem i_consulta;
     private javax.swing.JMenuItem i_historias;
     private javax.swing.JMenuItem i_lmedicamentos;
@@ -384,7 +385,6 @@ public class MDI extends javax.swing.JFrame {
     private javax.swing.JMenu m_pacientes;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JLabel reloj;
-    private javax.swing.JMenuItem reposo;
     // End of variables declaration//GEN-END:variables
 
 }

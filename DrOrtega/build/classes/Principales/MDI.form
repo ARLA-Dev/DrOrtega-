@@ -198,25 +198,25 @@
               <Connection code="BorderFactory.createMatteBorder(0, 0, 0, 1, Color.BLACK)" type="code"/>
             </Property>
             <Property name="mnemonic" type="int" value="104"/>
-            <Property name="text" type="java.lang.String" value="Reposos"/>
+            <Property name="text" type="java.lang.String" value="Documentos"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Leelawadee" size="18" style="1"/>
             </Property>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="reposo">
+            <MenuItem class="javax.swing.JMenuItem" name="documentos">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Leelawadee" size="14" style="1"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/Imagenes/paciente.png"/>
+                  <Image iconType="3" name="/Imagenes/documento.png"/>
                 </Property>
                 <Property name="mnemonic" type="int" value="99"/>
-                <Property name="text" type="java.lang.String" value="Generar Reposo"/>
+                <Property name="text" type="java.lang.String" value="Generar Documentos"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="reposoActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="documentosActionPerformed"/>
               </Events>
             </MenuItem>
           </SubComponents>
