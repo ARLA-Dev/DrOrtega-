@@ -293,8 +293,8 @@ public class Consultas extends javax.swing.JInternalFrame {
 
     private void Incluir_dosisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Incluir_dosisActionPerformed
 
-        indicaciones.append(listaM.get(medicamento.getSelectedIndex()).getNombreMedicamento()+ " " + dosis.getText() + " -> "+ listaM.get(medicamento.getSelectedIndex()).getIndicacionMedicamento()+"\n");
-        recetario.append(listaM.get(medicamento.getSelectedIndex()).getNombreMedicamento()+ " " + dosis.getText()+"\n");
+        indicaciones.append(listaM.get(medicamento.getSelectedIndex()).getNombreMedicamento()+ " " + dosis.getText() + " -> "+ listaM.get(medicamento.getSelectedIndex()).getIndicacionMedicamento()+"\n\n");
+        recetario.append(listaM.get(medicamento.getSelectedIndex()).getNombreMedicamento()+ " " + dosis.getText()+"\n\n");
         medicamento.setSelectedItem(0);
         dosis.setText("");
     }//GEN-LAST:event_Incluir_dosisActionPerformed

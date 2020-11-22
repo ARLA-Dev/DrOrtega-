@@ -15,7 +15,6 @@ public class Medicamentos extends javax.swing.JInternalFrame {
         setSize(1000, 575);
         oculto.setVisible(false);
         cargarCBMedicamentos();
-
     }
 
     @SuppressWarnings("unchecked")
@@ -244,13 +243,16 @@ public class Medicamentos extends javax.swing.JInternalFrame {
         buscado.removeAllItems();
         DesplegableMedicamentos medicamentos = new DesplegableMedicamentos();
         listaM = medicamentos.DesplegableMedicamentos();
-
-        for (int i = 0; i < listaM.size(); i++) {
+        
+        if(!listaM.isEmpty()){
+        
+            for (int i = 0; i < listaM.size(); i++) {
 
             buscado.addItem(listaM.get(i).getNombreMedicamento() + " | " + listaM.get(i).getIndicacionMedicamento());
             oculto.setText(listaM.get(i).getId_medicamento() + "");
+            }
+            oculto.setText(listaM.get(0).getId_medicamento() + "");          
         }
-        oculto.setText(listaM.get(0).getId_medicamento() + "");
     }
 
     ArrayList< Modelo> listaM;

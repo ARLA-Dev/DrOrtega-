@@ -107,14 +107,14 @@ C.I: V6154092      TLF:   0424-5147683
 				<textElement>
 					<font fontName="Leelawadee" size="12" isBold="true"/>
 				</textElement>
-				<text><![CDATA[Barquisimeto]]></text>
+				<text><![CDATA[Barquisimeto,]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="380" y="105" width="83" height="15"/>
 				<textElement>
 					<font fontName="Leelawadee" size="12" isBold="true"/>
 				</textElement>
-				<text><![CDATA[Barquisimeto]]></text>
+				<text><![CDATA[Barquisimeto,]]></text>
 			</staticText>
 			<textField pattern="dd/MM/yyyy">
 				<reportElement x="89" y="105" width="78" height="20"/>

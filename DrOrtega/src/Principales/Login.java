@@ -92,7 +92,7 @@ public class Login extends javax.swing.JFrame {
             if (clave.getText().equals("")) {
                 JOptionPane.showMessageDialog(null, "    No ingresó una contraseña", "ERROR", JOptionPane.ERROR_MESSAGE);
                 correcto = false;
-            } else if (clave.getText().equals("1")) {
+            } else if (clave.getText().equals("ANTONIETA")) {
                 
                 correcto = true;
                 
