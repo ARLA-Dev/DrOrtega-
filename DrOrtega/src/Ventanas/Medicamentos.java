@@ -38,6 +38,7 @@ public class Medicamentos extends javax.swing.JInternalFrame {
         indicacion = new javax.swing.JTextField();
         indicacion_buscada = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
 
         setBorder(null);
         setClosable(true);
@@ -171,8 +172,12 @@ public class Medicamentos extends javax.swing.JInternalFrame {
         jPanel1.add(indicacion_buscada, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 400, 300, 30));
 
         jLabel6.setFont(new java.awt.Font("Leelawadee", 1, 24)); // NOI18N
-        jLabel6.setText("Indicación Buscada");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 360, -1, -1));
+        jLabel6.setText("Medicamento Buscado");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 360, -1, -1));
+
+        jLabel7.setFont(new java.awt.Font("Leelawadee", 1, 24)); // NOI18N
+        jLabel7.setText("Indicación Buscada");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 360, -1, -1));
 
         getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
 
@@ -267,6 +272,7 @@ public class Medicamentos extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton limpiar;
     private javax.swing.JTextField medicamento_buscado;

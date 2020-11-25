@@ -27,7 +27,7 @@ public class Pacientes extends javax.swing.JInternalFrame {
         a_familiares = new javax.swing.JTextArea();
         jScrollPane2 = new javax.swing.JScrollPane();
         a_personales = new javax.swing.JTextArea();
-        direccion = new javax.swing.JTextField();
+        ocupacion = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         cedula = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
@@ -90,10 +90,10 @@ public class Pacientes extends javax.swing.JInternalFrame {
 
         jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 100, 390, 200));
 
-        direccion.setFont(new java.awt.Font("Leelawadee", 1, 16)); // NOI18N
-        direccion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102)));
-        direccion.setPreferredSize(new java.awt.Dimension(59, 26));
-        jPanel1.add(direccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, 270, -1));
+        ocupacion.setFont(new java.awt.Font("Leelawadee", 1, 16)); // NOI18N
+        ocupacion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102)));
+        ocupacion.setPreferredSize(new java.awt.Dimension(59, 26));
+        jPanel1.add(ocupacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, 270, -1));
 
         jLabel3.setFont(new java.awt.Font("Leelawadee", 1, 24)); // NOI18N
         jLabel3.setText("Cédula");
@@ -132,7 +132,7 @@ public class Pacientes extends javax.swing.JInternalFrame {
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 70, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Leelawadee", 1, 24)); // NOI18N
-        jLabel7.setText("Dirección");
+        jLabel7.setText("Ocupación");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Leelawadee", 1, 24)); // NOI18N
@@ -283,7 +283,7 @@ public class Pacientes extends javax.swing.JInternalFrame {
                     num_movil = inicial_telefono.getSelectedItem() + "" + movil.getText();
                 }
 
-                OP.ModificarPacienteOtraCedula(id_paciente, letra_cedula.getSelectedItem() + "" + cedula.getText(), nombre.getText().toUpperCase(), apellido.getText().toUpperCase(), Integer.parseInt(edad.getText()), direccion.getText().toUpperCase(), num_movil, fijo.getText(), a_personales.getText().toUpperCase(), a_familiares.getText().toUpperCase());
+                OP.ModificarPacienteOtraCedula(id_paciente, letra_cedula.getSelectedItem() + "" + cedula.getText(), nombre.getText().toUpperCase(), apellido.getText().toUpperCase(), Integer.parseInt(edad.getText()), ocupacion.getText().toUpperCase(), num_movil, fijo.getText(), a_personales.getText().toUpperCase(), a_familiares.getText().toUpperCase());
                 limpiarCampos();
 
             } else {
@@ -292,7 +292,7 @@ public class Pacientes extends javax.swing.JInternalFrame {
                 }
 
                 OperarPaciente OP = new OperarPaciente();
-                OP.ModificarPacienteMismaCedula(id_paciente, letra_cedula.getSelectedItem() + "" + cedula.getText(), nombre.getText().toUpperCase(), apellido.getText().toUpperCase(), Integer.parseInt(edad.getText()), direccion.getText().toUpperCase(), num_movil, fijo.getText(), a_personales.getText().toUpperCase(), a_familiares.getText().toUpperCase());
+                OP.ModificarPacienteMismaCedula(id_paciente, letra_cedula.getSelectedItem() + "" + cedula.getText(), nombre.getText().toUpperCase(), apellido.getText().toUpperCase(), Integer.parseInt(edad.getText()), ocupacion.getText().toUpperCase(), num_movil, fijo.getText(), a_personales.getText().toUpperCase(), a_familiares.getText().toUpperCase());
                 limpiarCampos();
             }
         }
@@ -321,7 +321,7 @@ public class Pacientes extends javax.swing.JInternalFrame {
             }
 
             OperarPaciente op = new OperarPaciente();
-            op.RegistrarPaciente(letra_cedula.getSelectedItem() + "" + cedula.getText(), nombre.getText().toUpperCase(), apellido.getText().toUpperCase(), Integer.parseInt(edad.getText()), direccion.getText().toUpperCase(), num_movil, fijo.getText(), a_personales.getText().toUpperCase(), a_familiares.getText().toUpperCase());
+            op.RegistrarPaciente(letra_cedula.getSelectedItem() + "" + cedula.getText(), nombre.getText().toUpperCase(), apellido.getText().toUpperCase(), Integer.parseInt(edad.getText()), ocupacion.getText().toUpperCase(), num_movil, fijo.getText(), a_personales.getText().toUpperCase(), a_familiares.getText().toUpperCase());
             limpiarCampos();
         }
     }//GEN-LAST:event_registrarActionPerformed
@@ -369,7 +369,7 @@ public class Pacientes extends javax.swing.JInternalFrame {
                 nombre.setText(modelo.getNombres());
                 apellido.setText(modelo.getApellidos());
                 edad.setText(modelo.getEdad() + "");
-                direccion.setText(modelo.getDireccion());
+                ocupacion.setText(modelo.getOcupacion());
                 fijo.setText(modelo.getFijo());
                 a_personales.setText(modelo.getAp());
                 a_familiares.setText(modelo.getAf());
@@ -390,7 +390,7 @@ public class Pacientes extends javax.swing.JInternalFrame {
         apellido.setText("");
         nombre.setText("");
         edad.setText("");
-        direccion.setText("");
+        ocupacion.setText("");
         a_familiares.setText("");
         a_personales.setText("");
         fijo.setText("");
@@ -410,7 +410,6 @@ public class Pacientes extends javax.swing.JInternalFrame {
     private javax.swing.JTextField apellido;
     private javax.swing.JButton buscar;
     private javax.swing.JTextField cedula;
-    private javax.swing.JTextField direccion;
     private javax.swing.JTextField edad;
     private javax.swing.JTextField fijo;
     private javax.swing.JComboBox<String> inicial_telefono;
@@ -433,6 +432,7 @@ public class Pacientes extends javax.swing.JInternalFrame {
     private javax.swing.JButton modificar;
     private javax.swing.JTextField movil;
     private javax.swing.JTextField nombre;
+    private javax.swing.JTextField ocupacion;
     private javax.swing.JButton registrar;
     // End of variables declaration//GEN-END:variables
 }

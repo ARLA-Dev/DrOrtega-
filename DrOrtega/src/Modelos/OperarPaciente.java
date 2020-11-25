@@ -12,7 +12,7 @@ public class OperarPaciente {
 
     private Modelo modelo = null;
 
-    public boolean RegistrarPaciente(String cedula, String nombre, String apellido, int edad, String direccion, String movil, String fijo, String ap, String af) {
+    public boolean RegistrarPaciente(String cedula, String nombre, String apellido, int edad, String ocupacion, String movil, String fijo, String ap, String af) {
         int op = 0;
         ResultSet rs = null;
         Modelo modelo = new Modelo();
@@ -28,7 +28,7 @@ public class OperarPaciente {
 
             } else {
 
-                op = bd.ejecutar("INSERT INTO `dr_johnny`.`pacientes` (`id_paciente`, `cedula`, `nombre`, `apellido`, `edad`, `direccion`, `telefono_fijo`, `telefono_movil`, `antecedentes_f`, `antecedentes_p`) VALUES (NULL, '" + cedula + "', '" + nombre + "', '" + apellido + "', " + edad + ", '" + direccion + "', '" + fijo + "', '" + movil + "', '" + af + "', '" + ap + "');");
+                op = bd.ejecutar("INSERT INTO `dr_johnny`.`pacientes` (`id_paciente`, `cedula`, `nombre`, `apellido`, `edad`, `ocupacion`, `telefono_fijo`, `telefono_movil`, `antecedentes_f`, `antecedentes_p`) VALUES (NULL, '" + cedula + "', '" + nombre + "', '" + apellido + "', " + edad + ", '" + ocupacion + "', '" + fijo + "', '" + movil + "', '" + af + "', '" + ap + "');");
 
                 if (op > 0) {
 
@@ -68,7 +68,7 @@ public class OperarPaciente {
                 modelo.setNombres(rs.getString("nombre"));
                 modelo.setApellidos(rs.getString("apellido"));
                 modelo.setEdad(rs.getInt("edad"));
-                modelo.setDireccion(rs.getString("direccion"));
+                modelo.setOcupacion(rs.getString("ocupacion"));
                 modelo.setFijo(rs.getString("telefono_fijo"));
                 modelo.setMovil(rs.getString("telefono_movil"));
                 modelo.setAp(rs.getString("antecedentes_p"));
@@ -84,14 +84,14 @@ public class OperarPaciente {
         return modelo;
     }
 
-    public boolean ModificarPacienteMismaCedula(int id, String cedula, String nombre, String apellido, int edad, String direccion, String movil, String fijo, String ap, String af) {
+    public boolean ModificarPacienteMismaCedula(int id, String cedula, String nombre, String apellido, int edad, String ocupacion, String movil, String fijo, String ap, String af) {
         int op = 0;
         BDConex bd = new BDConex();
         boolean correcto = false;
         ResultSet rs = null;
 
         op = bd.ejecutar("UPDATE pacientes SET nombre=\"" + nombre + "\",apellido=\"" + apellido
-                + "\",cedula=\"" + cedula + "\",edad=\"" + edad + "\",direccion=\"" + direccion + "\",telefono_fijo=\"" + fijo
+                + "\",cedula=\"" + cedula + "\",edad=\"" + edad + "\",ocupacion=\"" + ocupacion + "\",telefono_fijo=\"" + fijo
                 + "\",telefono_movil=\"" + movil + "\",antecedentes_f=\"" + af + "\",antecedentes_p=\"" + ap + "\" WHERE id_paciente = " + id + "");
 
         if (op > 0) {
@@ -108,7 +108,7 @@ public class OperarPaciente {
         return correcto;
     }
 
-    public boolean ModificarPacienteOtraCedula(int id, String cedula, String nombre, String apellido, int edad, String direccion, String movil, String fijo, String ap, String af) {
+    public boolean ModificarPacienteOtraCedula(int id, String cedula, String nombre, String apellido, int edad, String ocupacion, String movil, String fijo, String ap, String af) {
         int op = 0;
         BDConex bd = new BDConex();
         boolean correcto = false;
@@ -124,7 +124,7 @@ public class OperarPaciente {
             } else {
 
                 op = bd.ejecutar("UPDATE pacientes SET nombre=\"" + nombre + "\",apellido=\"" + apellido
-                        + "\",cedula=\"" + cedula + "\",edad=\"" + edad + "\",direccion=\"" + direccion + "\",telefono_fijo=\"" + fijo
+                        + "\",cedula=\"" + cedula + "\",edad=\"" + edad + "\",ocupacion=\"" + ocupacion + "\",telefono_fijo=\"" + fijo
                         + "\",telefono_movil=\"" + movil + "\",antecedentes_f=\"" + af + "\",antecedentes_p=\"" + ap + "\" WHERE id_paciente = " + id + "");
 
                 if (op > 0) {

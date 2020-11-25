@@ -18,12 +18,12 @@ public class Modelo {
         this.apellidos = apellidos;
     }
 
-    public String getDireccion() {
-        return direccion;
+    public String getOcupacion() {
+        return ocupacion;
     }
 
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
+    public void setOcupacion(String ocupacion) {
+        this.ocupacion = ocupacion;
     }
 
     public String getMovil() {
@@ -74,7 +74,7 @@ public class Modelo {
         this.id_paciente = id_paciente;
     }
     
-    String nombres, apellidos, direccion, movil, fijo, ap, af;
+    String nombres, apellidos, ocupacion, movil, fijo, ap, af;
     int edad, id_paciente;
 
     public String getNombreMedicamento() {
