@@ -1,5 +1,6 @@
 package Ventanas;
 
+import Globales.WordWrapRenderer;
 import Modelos.Modelo;
 import Modelos.OperarPaciente;
 import java.util.ArrayList;
@@ -84,6 +85,13 @@ public class ListadoPacientes extends javax.swing.JInternalFrame {
         DefaultTableModel model = (DefaultTableModel) listado.getModel();
 
         model.setRowCount(0);
+        
+        listado.getColumnModel().getColumn(0).setCellRenderer(new WordWrapRenderer());
+        listado.getColumnModel().getColumn(1).setCellRenderer(new WordWrapRenderer());
+        listado.getColumnModel().getColumn(2).setCellRenderer(new WordWrapRenderer());
+        listado.getColumnModel().getColumn(3).setCellRenderer(new WordWrapRenderer());
+        listado.getColumnModel().getColumn(4).setCellRenderer(new WordWrapRenderer());
+        
         for (int i = 0; i < miLista.size(); i++) {
 
             model.addRow(new Object[]{miLista.get(i).getId_paciente(), miLista.get(i).getNombres(),miLista.get(i).getApellidos(), miLista.get(i).getCedula(), miLista.get(i).getEdad()});

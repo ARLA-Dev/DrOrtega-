@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[select * from pacientes]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<summary>
+		<band height="750" splitType="Stretch">
+			<line>
+				<reportElement x="75" y="192" width="494" height="1"/>
+			</line>
+			<line>
+				<reportElement x="450" y="129" width="35" height="1"/>
+			</line>
+			<image>
+				<reportElement x="10" y="0" width="155" height="72"/>
+				<imageExpression><![CDATA["Imagenes\\arbol_traumatologia.gif"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="490" y="115" width="78" height="19"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Leelawadee" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Años de Edad]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="145" width="242" height="19"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Leelawadee" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Portador de la Cédula De Identidad Número ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="95" y="78" width="395" height="18"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Leelawadee" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CONSTANCIA DE ASISTENCIA (NO VÁLIDA PARA REPOSO)]]></text>
+			</staticText>
+			<line>
+				<reportElement x="239" y="164" width="115" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="0" y="115" width="191" height="20"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Leelawadee" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[El Suscrito Certifica que El Portador]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="214" width="100" height="19"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Leelawadee" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Barquisimeto,]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="300" y="0" width="258" height="72"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Leelawadee" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DR.  JOHNNY H.  ORTEGA  V.
+TRAUMATOLOGIA
+M.P.P.S. 55797   CML  4972   RIF-06154092-6
+C.I: V-6154092
+TLF:   0424-5147683]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="433" y="116" width="22" height="19"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Leelawadee" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[De]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="378" y="214" width="89" height="19"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Leelawadee" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Firma y Sello]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="180" width="75" height="15"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Leelawadee" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Diagnóstico:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="190" y="129" width="240" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="75" y="12" width="206" height="47"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Leelawadee" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[EDIFICIO LA PRINCESA.
+CALLE 39, ENTRE CARRERAS 20 Y 21
+BARQUISIMETO EDO. LARA]]></text>
+			</staticText>
+			<image>
+				<reportElement x="10" y="254" width="155" height="72"/>
+				<imageExpression><![CDATA["Imagenes\\arbol_traumatologia.gif"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="75" y="266" width="206" height="47"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Leelawadee" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[EDIFICIO LA PRINCESA.
+CALLE 39, ENTRE CARRERAS 20 Y 21
+BARQUISIMETO EDO. LARA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="300" y="254" width="258" height="72"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Leelawadee" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DR.  JOHNNY H.  ORTEGA  V.
+TRAUMATOLOGIA
+M.P.P.S. 55797   CML  4972   RIF-06154092-6
+C.I: V-6154092
+TLF:   0424-5147683]]></text>
+			</staticText>
+			<image>
+				<reportElement x="10" y="507" width="155" height="72"/>
+				<imageExpression><![CDATA["Imagenes\\arbol_traumatologia.gif"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="80" y="520" width="206" height="47"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Leelawadee" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[EDIFICIO LA PRINCESA.
+CALLE 39, ENTRE CARRERAS 20 Y 21
+BARQUISIMETO EDO. LARA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="300" y="507" width="258" height="72"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Leelawadee" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DR.  JOHNNY H.  ORTEGA  V.
+TRAUMATOLOGIA
+M.P.P.S. 55797   CML  4972   RIF-06154092-6
+C.I: V-6154092
+TLF:   0424-5147683]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="95" y="332" width="395" height="18"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Leelawadee" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CONSTANCIA DE ASISTENCIA (NO VÁLIDA PARA REPOSO)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="95" y="585" width="395" height="18"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Leelawadee" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CONSTANCIA DE ASISTENCIA (NO VÁLIDA PARA REPOSO)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="356" y="149" width="224" height="15"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Leelawadee" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Fue Atendido el día de hoy por Presentar]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="432" y="364" width="22" height="19"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Leelawadee" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[De]]></text>
+			</staticText>
+			<line>
+				<reportElement x="238" y="412" width="115" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="-1" y="363" width="191" height="20"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Leelawadee" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[El Suscrito Certifica que El Portador]]></text>
+			</staticText>
+			<line>
+				<reportElement x="74" y="440" width="494" height="1"/>
+			</line>
+			<line>
+				<reportElement x="449" y="377" width="35" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="-1" y="393" width="242" height="19"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Leelawadee" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Portador de la Cédula De Identidad Número ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-1" y="462" width="100" height="19"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Leelawadee" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Barquisimeto,]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="355" y="397" width="224" height="15"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Leelawadee" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Fue Atendido el día de hoy por Presentar]]></text>
+			</staticText>
+			<line>
+				<reportElement x="189" y="377" width="240" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="489" y="363" width="78" height="19"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Leelawadee" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Años de Edad]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="377" y="462" width="89" height="19"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Leelawadee" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Firma y Sello]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-1" y="428" width="75" height="15"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Leelawadee" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Diagnóstico:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="433" y="620" width="22" height="19"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Leelawadee" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[De]]></text>
+			</staticText>
+			<line>
+				<reportElement x="239" y="668" width="115" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="0" y="619" width="191" height="20"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Leelawadee" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[El Suscrito Certifica que El Portador]]></text>
+			</staticText>
+			<line>
+				<reportElement x="75" y="696" width="494" height="1"/>
+			</line>
+			<line>
+				<reportElement x="450" y="633" width="35" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="0" y="649" width="242" height="19"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Leelawadee" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Portador de la Cédula De Identidad Número ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="718" width="100" height="19"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Leelawadee" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Barquisimeto,]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="356" y="653" width="224" height="15"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Leelawadee" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Fue Atendido el día de hoy por Presentar]]></text>
+			</staticText>
+			<line>
+				<reportElement x="190" y="633" width="240" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="490" y="619" width="78" height="19"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Leelawadee" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Años de Edad]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="378" y="718" width="89" height="19"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Leelawadee" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Firma y Sello]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="684" width="75" height="15"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Leelawadee" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Diagnóstico:]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

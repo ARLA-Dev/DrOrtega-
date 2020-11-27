@@ -147,6 +147,11 @@ public class Pacientes extends javax.swing.JInternalFrame {
         movil.setFont(new java.awt.Font("Leelawadee", 1, 16)); // NOI18N
         movil.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102)));
         movil.setPreferredSize(new java.awt.Dimension(59, 26));
+        movil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                movilActionPerformed(evt);
+            }
+        });
         movil.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 movilKeyTyped(evt);
@@ -267,7 +272,7 @@ public class Pacientes extends javax.swing.JInternalFrame {
 
             JOptionPane.showMessageDialog(null, "Alguno de los campos está vacío... Intente de nuevo", "¡ERROR!", JOptionPane.ERROR_MESSAGE);
 
-        } else if (!((cedula.getText().length() < 7 || movil.getText().length() != 7)||(cedula.getText().length() < 7 || fijo.getText().length() != 11))) {
+        } else if (!((cedula.getText().length() < 7 || movil.getText().length() != 7)||(cedula.getText().length() < 7 || fijo.getText().length() != 10))) {
 
             JOptionPane.showMessageDialog(null, "Faltan números en la cédula o los teléfonos", "ERROR", JOptionPane.ERROR_MESSAGE);
 
@@ -381,6 +386,10 @@ public class Pacientes extends javax.swing.JInternalFrame {
             }
         }
     }//GEN-LAST:event_buscarActionPerformed
+
+    private void movilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_movilActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_movilActionPerformed
 
     //MIS METODOS
     private void limpiarCampos() {

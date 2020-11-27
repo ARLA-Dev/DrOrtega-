@@ -1,5 +1,6 @@
 package Ventanas;
 
+import Globales.WordWrapRenderer;
 import Modelos.OperarMedicamento;
 import java.util.ArrayList;
 import Modelos.Modelo;
@@ -81,6 +82,8 @@ public class ListadoMedicamentos extends javax.swing.JInternalFrame {
         OperarMedicamento op = new OperarMedicamento();
         ArrayList<Modelo> miLista = op.BuscarconMatriz();
         DefaultTableModel model = (DefaultTableModel) listado.getModel();
+        listado.getColumnModel().getColumn(0).setCellRenderer(new WordWrapRenderer());
+        listado.getColumnModel().getColumn(1).setCellRenderer(new WordWrapRenderer());
 
         model.setRowCount(0);
         for (int i = 0; i < miLista.size(); i++) {

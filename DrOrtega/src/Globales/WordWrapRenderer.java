@@ -1,4 +1,6 @@
 package Globales;
+
+
 import java.awt.*;
 import javax.swing.*;
 import javax.swing.table.*;
@@ -11,8 +13,8 @@ import javax.swing.table.*;
  */
 public class WordWrapRenderer extends JTextArea implements TableCellRenderer
 {
-    public WordWrapRenderer(){
-        
+    public WordWrapRenderer()
+    {
         setLineWrap(true);
         setWrapStyleWord(true);
     }
@@ -49,4 +51,6 @@ public class WordWrapRenderer extends JTextArea implements TableCellRenderer
         frame.setLocationRelativeTo( null );
         frame.setVisible( true );
     }
+
+
 }

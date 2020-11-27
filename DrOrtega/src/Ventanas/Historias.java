@@ -15,7 +15,11 @@ public class Historias extends javax.swing.JInternalFrame {
         initComponents();
         setSize(1000, 575);
         historia.getTableHeader().setReorderingAllowed(false);
-
+        historia.getColumnModel().getColumn(0).setCellRenderer(new WordWrapRenderer());
+        historia.getColumnModel().getColumn(1).setCellRenderer(new WordWrapRenderer());
+        historia.getColumnModel().getColumn(2).setCellRenderer(new WordWrapRenderer());
+        historia.getColumnModel().getColumn(3).setCellRenderer(new WordWrapRenderer());
+        historia.getColumnModel().getColumn(4).setCellRenderer(new WordWrapRenderer());
     }
 
     @SuppressWarnings("unchecked")
@@ -29,12 +33,12 @@ public class Historias extends javax.swing.JInternalFrame {
         letra_cedula = new javax.swing.JComboBox<>();
         buscar = new javax.swing.JButton();
         limpiar = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        historia = new javax.swing.JTable();
         cedula = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         nombreYApellido = new javax.swing.JTextField();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        historia = new javax.swing.JTable();
 
         setBorder(null);
         setClosable(true);
@@ -95,31 +99,6 @@ public class Historias extends javax.swing.JInternalFrame {
         });
         jPanel1.add(limpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 80, 110, -1));
 
-        historia.setFont(new java.awt.Font("Leelawadee", 1, 12)); // NOI18N
-        historia.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
-            },
-            new String [] {
-                "Fecha", "Motivo", "Diagnóstico", "Indicaciones", "Recetario"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        historia.setColumnSelectionAllowed(true);
-        jScrollPane1.setViewportView(historia);
-
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 980, 410));
-
         cedula.setFont(new java.awt.Font("Leelawadee", 1, 16)); // NOI18N
         cedula.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102)));
         cedula.setPreferredSize(new java.awt.Dimension(59, 26));
@@ -144,6 +123,37 @@ public class Historias extends javax.swing.JInternalFrame {
         nombreYApellido.setPreferredSize(new java.awt.Dimension(59, 26));
         jPanel1.add(nombreYApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 90, 240, -1));
 
+        jScrollPane2.setPreferredSize(new java.awt.Dimension(375, 64));
+
+        historia.setFont(new java.awt.Font("Leelawadee", 1, 12)); // NOI18N
+        historia.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Fecha", "Motivo", "Diagnóstico", "Indicaciones", "Recetario"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, true, true, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        historia.setColumnSelectionAllowed(true);
+        historia.setEnabled(false);
+        historia.setFocusable(false);
+        historia.setRequestFocusEnabled(false);
+        historia.setRowSelectionAllowed(false);
+        jScrollPane2.setViewportView(historia);
+
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 980, 410));
+
         getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
 
         pack();
@@ -165,13 +175,12 @@ public class Historias extends javax.swing.JInternalFrame {
         if (cedula.getText().equals("")) {
 
             JOptionPane.showMessageDialog(null, "El campo está vacío... Intente de nuevo", "¡ERROR!", JOptionPane.ERROR_MESSAGE);
-            
+
         } else {
-           
-            obtenerMatriz();          
-        }    
+
+            obtenerMatriz();
+        }
     }//GEN-LAST:event_buscarActionPerformed
-    
 
     //Mis Metodos
     public void obtenerMatriz() {
@@ -179,28 +188,26 @@ public class Historias extends javax.swing.JInternalFrame {
         OperarConsulta op = new OperarConsulta();
         ArrayList<Modelo> miLista = op.BuscarconMatriz(letra_cedula.getSelectedItem() + "" + cedula.getText());
         DefaultTableModel model = (DefaultTableModel) historia.getModel();
-
+        historia.getColumnModel().getColumn(0).setCellRenderer(new WordWrapRenderer());
+        historia.getColumnModel().getColumn(1).setCellRenderer(new WordWrapRenderer());
+        historia.getColumnModel().getColumn(2).setCellRenderer(new WordWrapRenderer());
+        historia.getColumnModel().getColumn(3).setCellRenderer(new WordWrapRenderer());
+        historia.getColumnModel().getColumn(4).setCellRenderer(new WordWrapRenderer());
         model.setRowCount(0);
-        
-        if (miLista.size() > 0){
-            
-            historia.getColumnModel().getColumn(0).setCellRenderer(new WordWrapRenderer());
-            historia.getColumnModel().getColumn(1).setCellRenderer(new WordWrapRenderer());
-            historia.getColumnModel().getColumn(2).setCellRenderer(new WordWrapRenderer());
-            historia.getColumnModel().getColumn(3).setCellRenderer(new WordWrapRenderer());
-            historia.getColumnModel().getColumn(4).setCellRenderer(new WordWrapRenderer());
+
+        if (miLista.size() > 0) {
 
             for (int i = 0; i < miLista.size(); i++) {
-                
-                nombreYApellido.setText(miLista.get(i).getNombres() +" "+ miLista.get(i).getApellidos());
-                num_historia.setText(miLista.get(i).getId_paciente() +"");
-                
-                model.addRow(new Object[]{miLista.get(i).getFecha(), miLista.get(i).getMotivo(),miLista.get(i).getDiagnostico(), miLista.get(i).getIndicaciones(), miLista.get(i).getRecetario()});
-              
-                
-            }                    
-        }     
+
+                nombreYApellido.setText(miLista.get(i).getNombres() + " " + miLista.get(i).getApellidos());
+                num_historia.setText(miLista.get(i).getId_paciente() + "");
+
+                model.addRow(new Object[]{miLista.get(i).getFecha(), miLista.get(i).getMotivo(), miLista.get(i).getDiagnostico(), miLista.get(i).getIndicaciones(), miLista.get(i).getRecetario()});
+
+            }
+        }
     }
+
     private void limpiarCampos() {
         cedula.setText("");
         letra_cedula.setSelectedItem("V-");
@@ -209,9 +216,9 @@ public class Historias extends javax.swing.JInternalFrame {
         DefaultTableModel model = (DefaultTableModel) historia.getModel();
         model.setRowCount(0);
     }
-    
+
     Globales metodos = new Globales();
-    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buscar;
     private javax.swing.JTextField cedula;
@@ -221,7 +228,7 @@ public class Historias extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JComboBox<String> letra_cedula;
     private javax.swing.JButton limpiar;
     private javax.swing.JTextField nombreYApellido;

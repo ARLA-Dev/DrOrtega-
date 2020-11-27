@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="792" pageHeight="612" orientation="Landscape" columnWidth="752" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[select * from consultas, pacientes where consultas.id_consulta=(select MAX(id_consulta) from consultas) AND consultas.id_paciente = pacientes.id_paciente]]>
+	</queryString>
+	<field name="indicaciones" class="java.lang.String"/>
+	<field name="recetario" class="java.lang.String"/>
+	<field name="cedula" class="java.lang.String"/>
+	<field name="nombre" class="java.lang.String"/>
+	<field name="apellido" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="155" height="79"/>
+				<imageExpression><![CDATA["Imagenes\\arbol_traumatologia.gif"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="377" y="0" width="155" height="79"/>
+				<imageExpression><![CDATA["Imagenes\\arbol_traumatologia.gif"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="89" y="7" width="258" height="72"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Leelawadee" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DR.  JOHNNY H.  ORTEGA  V.
+TRAUMATOLOGIA
+M.P.P.S. 55797   CML  4972   RIF-06154092-6
+C.I: V6154092      TLF:   0424-5147683
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="463" y="7" width="260" height="72"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Leelawadee" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DR.  JOHNNY H.  ORTEGA  V.
+TRAUMATOLOGIA
+M.P.P.S. 55797   CML  4972   RIF-06154092-6
+C.I: V6154092      TLF:   0424-5147683
+]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="249" splitType="Stretch">
+			<staticText>
+				<reportElement x="155" y="12" width="55" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Leelawadee" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Récipe]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="532" y="12" width="86" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Leelawadee" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Indicaciones]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="132" splitType="Stretch">
+			<staticText>
+				<reportElement x="188" y="106" width="34" height="20"/>
+				<textElement>
+					<font fontName="Leelawadee" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Firma]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="565" y="106" width="34" height="20"/>
+				<textElement>
+					<font fontName="Leelawadee" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Firma]]></text>
+			</staticText>
+			<line>
+				<reportElement x="604" y="120" width="131" height="1"/>
+			</line>
+			<line>
+				<reportElement x="227" y="120" width="120" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="6" y="105" width="83" height="15"/>
+				<textElement>
+					<font fontName="Leelawadee" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Barquisimeto,]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="380" y="105" width="83" height="15"/>
+				<textElement>
+					<font fontName="Leelawadee" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Barquisimeto,]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>
