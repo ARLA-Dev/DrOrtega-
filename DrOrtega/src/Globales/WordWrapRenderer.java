@@ -24,7 +24,7 @@ public class WordWrapRenderer extends JTextArea implements TableCellRenderer
 
         //  Recalculate the preferred height now that the text and renderer width have been set.
 
-        int preferredHeight = getPreferredSize().height + 50;
+        int preferredHeight = getPreferredSize().height + 10;
 
         if (table.getRowHeight(row) != preferredHeight)
         {

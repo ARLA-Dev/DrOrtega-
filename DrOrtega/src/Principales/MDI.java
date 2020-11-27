@@ -16,6 +16,7 @@ import java.awt.event.WindowEvent;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
@@ -27,6 +28,7 @@ public class MDI extends javax.swing.JFrame {
         initComponents();
         setSize(1024, 650);
         setResizable(false);
+        setIconImage(new ImageIcon(getClass().getResource("/Imagenes/icono_principal.png")).getImage());
         setLocationRelativeTo(null);
         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         addWindowListener(new WindowAdapter() {
@@ -311,7 +313,7 @@ public class MDI extends javax.swing.JFrame {
     }//GEN-LAST:event_i_lmedicamentosActionPerformed
 
     private void documentosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_documentosActionPerformed
-       reposo_m.setVisible(true);
+        reposo_m.setVisible(true);
     }//GEN-LAST:event_documentosActionPerformed
 
     //MIS METODOS
@@ -334,7 +336,7 @@ public class MDI extends javax.swing.JFrame {
     }
 
     public void reloj() {
-        
+
         DateTimeFormatter formateador = DateTimeFormatter.ofPattern("h:mm:ss a");
         Runnable runnable = new Runnable() {
             @Override
@@ -351,7 +353,7 @@ public class MDI extends javax.swing.JFrame {
         };
         Thread hilo = new Thread(runnable);
         hilo.start();
-        
+
     }
 
     private Globales globales = new Globales();

@@ -4,6 +4,7 @@ import Globales.Globales;
 import java.awt.Toolkit;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import static javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE;
@@ -15,6 +16,7 @@ public class Login extends javax.swing.JFrame {
         setResizable(false);
         setLocationRelativeTo(null);
         setSize(1024, 650);
+        setIconImage(new ImageIcon(getClass().getResource("/Imagenes/icono_principal.png")).getImage());
         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         addWindowListener(new WindowAdapter() {
 

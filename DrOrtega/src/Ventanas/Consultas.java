@@ -24,6 +24,7 @@ public class Consultas extends javax.swing.JInternalFrame {
         cargarCBMedicamentos();
         medicamento.setSelectedIndex(0);
         fecha.setText(metodos.fecha_al_dia());
+        aviso.setVisible(false);
     }
 
     @SuppressWarnings("unchecked")
@@ -47,7 +48,6 @@ public class Consultas extends javax.swing.JInternalFrame {
         dosis = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         nombreYApellido = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
         edad = new javax.swing.JTextField();
         jScrollPane3 = new javax.swing.JScrollPane();
         indicaciones = new javax.swing.JTextArea();
@@ -67,6 +67,11 @@ public class Consultas extends javax.swing.JInternalFrame {
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        aviso = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
 
         menu1.setLabel("File");
         menuBar1.add(menu1);
@@ -193,10 +198,6 @@ public class Consultas extends javax.swing.JInternalFrame {
         nombreYApellido.setPreferredSize(new java.awt.Dimension(59, 26));
         jPanel1.add(nombreYApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 220, -1));
 
-        jLabel6.setFont(new java.awt.Font("Leelawadee", 1, 24)); // NOI18N
-        jLabel6.setText("Cédula del Paciente");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, -1));
-
         edad.setEditable(false);
         edad.setFont(new java.awt.Font("Leelawadee", 1, 16)); // NOI18N
         edad.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102)));
@@ -282,6 +283,31 @@ public class Consultas extends javax.swing.JInternalFrame {
         jLabel15.setText("Dr Johnny Ortega");
         jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 290, -1, -1));
 
+        jLabel18.setFont(new java.awt.Font("Leelawadee", 1, 24)); // NOI18N
+        jLabel18.setText("Cédula del Paciente");
+        jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, -1));
+
+        aviso.setBackground(new java.awt.Color(0, 102, 102));
+        aviso.setForeground(new java.awt.Color(0, 102, 102));
+        aviso.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel6.setFont(new java.awt.Font("Leelawadee", 1, 24)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("¡Aviso!");
+        aviso.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, -1, -1));
+
+        jLabel16.setFont(new java.awt.Font("Leelawadee", 1, 14)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel16.setText("Se recomienta");
+        aviso.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, -1, -1));
+
+        jLabel17.setFont(new java.awt.Font("Leelawadee", 1, 14)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel17.setText("actualizar paciente");
+        aviso.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, -1, -1));
+
+        jPanel1.add(aviso, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 160, 70));
+
         getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
 
         pack();
@@ -329,6 +355,16 @@ public class Consultas extends javax.swing.JInternalFrame {
                 id_paciente = modelo.getId_paciente();
                 nombreYApellido.setText(modelo.getNombres() + " " + modelo.getApellidos());
                 edad.setText(modelo.getEdad() + "");
+                
+                if(modelo.getEdad() == 0){
+                    
+                    aviso.setVisible(true);
+                
+                }else{
+                    
+                    aviso.setVisible(false);
+                
+                }
             }
         }
     }//GEN-LAST:event_buscar1ActionPerformed
@@ -366,6 +402,7 @@ public class Consultas extends javax.swing.JInternalFrame {
         cargarCBMedicamentos();
         id_paciente = 0;
         medicamento.setSelectedIndex(0);
+        aviso.setVisible(false);
     }
 
     public void cargarCBMedicamentos() {
@@ -412,6 +449,7 @@ public class Consultas extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Incluir_dosis;
+    private javax.swing.JPanel aviso;
     private javax.swing.JButton buscar1;
     private javax.swing.JTextField cedula;
     private javax.swing.JTextArea diagnostico;
@@ -426,6 +464,9 @@ public class Consultas extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

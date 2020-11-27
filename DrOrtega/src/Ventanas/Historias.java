@@ -1,6 +1,7 @@
 package Ventanas;
 
 import Globales.Globales;
+import Globales.HISTORIAS;
 import Globales.WordWrapRenderer;
 import Modelos.Modelo;
 import Modelos.OperarConsulta;
@@ -152,7 +153,6 @@ public class Historias extends javax.swing.JInternalFrame {
         historia.setColumnSelectionAllowed(true);
         historia.setEnabled(false);
         historia.setFocusable(false);
-        historia.setPreferredSize(new java.awt.Dimension(980, 410));
         historia.setRequestFocusEnabled(false);
         historia.setRowHeight(60);
         historia.setRowSelectionAllowed(false);
@@ -202,11 +202,6 @@ public class Historias extends javax.swing.JInternalFrame {
         OperarConsulta op = new OperarConsulta();
         ArrayList<Modelo> miLista = op.BuscarconMatriz(letra_cedula.getSelectedItem() + "" + cedula.getText());
         DefaultTableModel model = (DefaultTableModel) historia.getModel();
-        historia.getColumnModel().getColumn(0).setCellRenderer(new WordWrapRenderer());
-        historia.getColumnModel().getColumn(1).setCellRenderer(new WordWrapRenderer());
-        historia.getColumnModel().getColumn(2).setCellRenderer(new WordWrapRenderer());
-        historia.getColumnModel().getColumn(3).setCellRenderer(new WordWrapRenderer());
-        historia.getColumnModel().getColumn(4).setCellRenderer(new WordWrapRenderer());
         model.setRowCount(0);
 
         if (miLista.size() > 0) {
@@ -217,7 +212,11 @@ public class Historias extends javax.swing.JInternalFrame {
                 num_historia.setText(miLista.get(i).getId_paciente() + "");
 
                 model.addRow(new Object[]{miLista.get(i).getFecha(), miLista.get(i).getMotivo(), miLista.get(i).getDiagnostico(), miLista.get(i).getIndicaciones(), miLista.get(i).getRecetario()});
-                
+                historia.getColumnModel().getColumn(0).setCellRenderer(new HISTORIAS());
+                historia.getColumnModel().getColumn(1).setCellRenderer(new HISTORIAS());
+                historia.getColumnModel().getColumn(2).setCellRenderer(new HISTORIAS());
+                historia.getColumnModel().getColumn(3).setCellRenderer(new HISTORIAS());
+                historia.getColumnModel().getColumn(4).setCellRenderer(new HISTORIAS());
             }
         }
     }
@@ -230,8 +229,6 @@ public class Historias extends javax.swing.JInternalFrame {
         DefaultTableModel model = (DefaultTableModel) historia.getModel();
         model.setRowCount(0);
     }
-    
-
 
     Globales metodos = new Globales();
 
