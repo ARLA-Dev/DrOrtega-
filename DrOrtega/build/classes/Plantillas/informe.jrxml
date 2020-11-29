@@ -18,7 +18,7 @@
 		<band height="79" splitType="Stretch">
 			<image>
 				<reportElement x="0" y="0" width="63" height="79"/>
-				<imageExpression><![CDATA["Imagenes\\arbol_traumatologia.gif"]]></imageExpression>
+				<imageExpression><![CDATA["C://Doctor//Plantillas//Imagenes//arbol_traumatologia.gif"]]></imageExpression>
 			</image>
 			<staticText>
 				<reportElement x="51" y="18" width="136" height="47"/>
@@ -42,7 +42,7 @@ TLF:   0424-5147683]]></text>
 			</staticText>
 			<image>
 				<reportElement x="378" y="0" width="63" height="79"/>
-				<imageExpression><![CDATA["Imagenes\\arbol_traumatologia.gif"]]></imageExpression>
+				<imageExpression><![CDATA["C://Doctor//Plantillas//Imagenes//arbol_traumatologia.gif"]]></imageExpression>
 			</image>
 			<staticText>
 				<reportElement x="574" y="1" width="181" height="72"/>

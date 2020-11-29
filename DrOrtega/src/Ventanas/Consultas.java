@@ -425,7 +425,7 @@ public class Consultas extends javax.swing.JInternalFrame {
             Connection conn = con.getConexion();
 
             JasperReport reporte = null;
-            String path = "src\\Plantillas\\Recipes.jasper";
+            String path = "C:\\Doctor\\Plantillas\\Recipes.jasper";
 
             reporte = (JasperReport) JRLoader.loadObjectFromFile(path);
 

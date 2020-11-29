@@ -204,7 +204,7 @@ public class Documentos extends javax.swing.JInternalFrame {
             Connection conn = con.getConexion();
 
             JasperReport reporte = null;
-            String path = "src\\Plantillas\\"+ plantilla +".jasper";
+            String path = "C:\\Doctor\\Plantillas\\"+ plantilla +".jasper";
 
             reporte = (JasperReport) JRLoader.loadObjectFromFile(path);
 
@@ -217,7 +217,7 @@ public class Documentos extends javax.swing.JInternalFrame {
             view.setVisible(true);
 
         } catch (JRException ex) {
-            JOptionPane.showMessageDialog(null, "Error");
+            JOptionPane.showMessageDialog(null, "error");
         }
     }
     

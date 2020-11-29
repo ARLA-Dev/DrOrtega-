@@ -19,7 +19,7 @@
 			</line>
 			<image>
 				<reportElement x="10" y="0" width="155" height="72"/>
-				<imageExpression><![CDATA["Imagenes\\arbol_traumatologia.gif"]]></imageExpression>
+				<imageExpression><![CDATA["C://Doctor//Plantillas//Imagenes//arbol_traumatologia.gif"]]></imageExpression>
 			</image>
 			<staticText>
 				<reportElement x="315" y="124" width="254" height="19"/>
@@ -135,7 +135,7 @@ BARQUISIMETO EDO. LARA]]></text>
 			</staticText>
 			<image>
 				<reportElement x="10" y="254" width="155" height="72"/>
-				<imageExpression><![CDATA["Imagenes\\arbol_traumatologia.gif"]]></imageExpression>
+				<imageExpression><![CDATA["C://Doctor//Plantillas//Imagenes//arbol_traumatologia.gif"]]></imageExpression>
 			</image>
 			<staticText>
 				<reportElement x="75" y="266" width="206" height="47"/>
@@ -248,7 +248,7 @@ TLF:   0424-5147683]]></text>
 			</line>
 			<image>
 				<reportElement x="10" y="507" width="155" height="72"/>
-				<imageExpression><![CDATA["Imagenes\\arbol_traumatologia.gif"]]></imageExpression>
+				<imageExpression><![CDATA["C://Doctor//Plantillas//Imagenes//arbol_traumatologia.gif"]]></imageExpression>
 			</image>
 			<line>
 				<reportElement x="148" y="612" width="421" height="1"/>

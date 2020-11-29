@@ -18,11 +18,11 @@
 		<band height="79" splitType="Stretch">
 			<image>
 				<reportElement x="0" y="0" width="155" height="79"/>
-				<imageExpression><![CDATA["Imagenes\\arbol_traumatologia.gif"]]></imageExpression>
+				<imageExpression><![CDATA["C://Doctor//Plantillas//Imagenes//arbol_traumatologia.gif"]]></imageExpression>
 			</image>
 			<image>
 				<reportElement x="377" y="0" width="155" height="79"/>
-				<imageExpression><![CDATA["Imagenes\\arbol_traumatologia.gif"]]></imageExpression>
+				<imageExpression><![CDATA["C://Doctor//Plantillas//Imagenes//arbol_traumatologia.gif"]]></imageExpression>
 			</image>
 			<staticText>
 				<reportElement x="89" y="7" width="258" height="72"/>
