@@ -230,7 +230,7 @@ public class Medicamentos extends javax.swing.JInternalFrame {
 
    //METODOS PERSONALES
     
-    private void limpiarCampos() {
+    public void limpiarCampos() {
         
         cargarCBMedicamentos();
         oculto.setText(listaM.get(0).getId_medicamento() +"");

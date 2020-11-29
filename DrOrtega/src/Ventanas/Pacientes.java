@@ -392,7 +392,7 @@ public class Pacientes extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_movilActionPerformed
 
     //MIS METODOS
-    private void limpiarCampos() {
+    public void limpiarCampos() {
         id_paciente = 0;
         cedula_buscada = "";
         cedula.setText("");

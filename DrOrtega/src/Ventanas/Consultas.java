@@ -389,7 +389,7 @@ public class Consultas extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_registrarActionPerformed
 
     // Mis Métodos
-    private void limpiarCampos() {
+    public void limpiarCampos() {
         cedula.setText("");
         nombreYApellido.setText("");
         edad.setText("");
@@ -403,6 +403,7 @@ public class Consultas extends javax.swing.JInternalFrame {
         id_paciente = 0;
         medicamento.setSelectedIndex(0);
         aviso.setVisible(false);
+        cargarCBMedicamentos();
     }
 
     public void cargarCBMedicamentos() {

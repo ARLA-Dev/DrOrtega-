@@ -1,12 +1,13 @@
 package Ventanas;
 
 import Globales.Globales;
-import Globales.HISTORIAS;
 import Globales.WordWrapRenderer;
+import Globales.MultiLineCellRenderer;
 import Modelos.Modelo;
 import Modelos.OperarConsulta;
 import Modelos.OperarPaciente;
 import java.awt.Component;
+import java.awt.Dimension;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -18,11 +19,6 @@ public class Historias extends javax.swing.JInternalFrame {
         setSize(1000, 575);
         historia.getTableHeader().setReorderingAllowed(false);
         DefaultTableModel model = (DefaultTableModel) historia.getModel();
-        historia.getColumnModel().getColumn(0).setCellRenderer(new WordWrapRenderer());
-        historia.getColumnModel().getColumn(1).setCellRenderer(new WordWrapRenderer());
-        historia.getColumnModel().getColumn(2).setCellRenderer(new WordWrapRenderer());
-        historia.getColumnModel().getColumn(3).setCellRenderer(new WordWrapRenderer());
-        historia.getColumnModel().getColumn(4).setCellRenderer(new WordWrapRenderer());
         model.setRowCount(0);
     }
 
@@ -212,16 +208,17 @@ public class Historias extends javax.swing.JInternalFrame {
                 num_historia.setText(miLista.get(i).getId_paciente() + "");
 
                 model.addRow(new Object[]{miLista.get(i).getFecha(), miLista.get(i).getMotivo(), miLista.get(i).getDiagnostico(), miLista.get(i).getIndicaciones(), miLista.get(i).getRecetario()});
-                historia.getColumnModel().getColumn(0).setCellRenderer(new HISTORIAS());
-                historia.getColumnModel().getColumn(1).setCellRenderer(new HISTORIAS());
-                historia.getColumnModel().getColumn(2).setCellRenderer(new HISTORIAS());
-                historia.getColumnModel().getColumn(3).setCellRenderer(new HISTORIAS());
-                historia.getColumnModel().getColumn(4).setCellRenderer(new HISTORIAS());
+                historia.getColumnModel().getColumn(0).setCellRenderer(new MultiLineCellRenderer());
+                historia.getColumnModel().getColumn(1).setCellRenderer(new MultiLineCellRenderer());
+                historia.getColumnModel().getColumn(2).setCellRenderer(new MultiLineCellRenderer());
+                historia.getColumnModel().getColumn(3).setCellRenderer(new MultiLineCellRenderer());
+                historia.getColumnModel().getColumn(4).setCellRenderer(new MultiLineCellRenderer());
+
             }
         }
     }
 
-    private void limpiarCampos() {
+    public void limpiarCampos() {
         cedula.setText("");
         letra_cedula.setSelectedItem("V-");
         nombreYApellido.setText("");

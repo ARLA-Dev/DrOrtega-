@@ -288,18 +288,22 @@ public class MDI extends javax.swing.JFrame {
 
     private void i_pacientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_i_pacientesActionPerformed
         pacientes.setVisible(true);
+        pacientes.limpiarCampos();
     }//GEN-LAST:event_i_pacientesActionPerformed
 
     private void i_medicamentosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_i_medicamentosActionPerformed
         medicamentos.setVisible(true);
+        medicamentos.limpiarCampos();
     }//GEN-LAST:event_i_medicamentosActionPerformed
 
     private void i_consultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_i_consultaActionPerformed
         consultas.setVisible(true);
+        consultas.limpiarCampos();
     }//GEN-LAST:event_i_consultaActionPerformed
 
     private void i_historiasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_i_historiasActionPerformed
         historias.setVisible(true);
+        historias.limpiarCampos();
     }//GEN-LAST:event_i_historiasActionPerformed
 
     private void i_lpacientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_i_lpacientesActionPerformed
