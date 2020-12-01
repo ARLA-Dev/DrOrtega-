@@ -10,8 +10,8 @@ public class Pacientes extends javax.swing.JInternalFrame {
     public Pacientes() {
         initComponents();
         setSize(1000, 575);
-        modificar.setEnabled(false);
         buscar.setEnabled(true);
+        modificar.setEnabled(false);
 
     }
 
@@ -311,7 +311,7 @@ public class Pacientes extends javax.swing.JInternalFrame {
 
             JOptionPane.showMessageDialog(null, "¡Algún campo importante está vacío!", "ERROR", JOptionPane.ERROR_MESSAGE);
 
-        } else if (!((cedula.getText().length() < 7 || movil.getText().length() != 7)||(cedula.getText().length() < 7 || fijo.getText().length() != 11))) {
+        } else if (!((cedula.getText().length() < 7 || movil.getText().length() != 7)||(cedula.getText().length() < 7 || fijo.getText().length() != 10))) {
 
             JOptionPane.showMessageDialog(null, "Faltan números en la cédula o los teléfonos", "ERROR", JOptionPane.ERROR_MESSAGE);
             
